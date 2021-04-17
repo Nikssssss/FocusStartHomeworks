@@ -3,24 +3,70 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3162E2BDCDEC0BE0ACE37B /* Pods_CarRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC49F33EDBBB754606DFD67 /* Pods_CarRecorder.framework */; };
+		F626538126298A8E0045651D /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538026298A8E0045651D /* CarListViewController.swift */; };
+		F626538426298AA70045651D /* CarListViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538326298AA70045651D /* CarListViewControllerProtocol.swift */; };
+		F626538726298AB60045651D /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538626298AB60045651D /* CarListPresenter.swift */; };
+		F626538A26298AC60045651D /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538926298AC60045651D /* CarListInteractor.swift */; };
+		F626538D26298AD20045651D /* CarListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538C26298AD20045651D /* CarListRouter.swift */; };
+		F626539026298AE10045651D /* CarListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626538F26298AE10045651D /* CarListAssembly.swift */; };
+		F626539326298AF20045651D /* CarListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539226298AF20045651D /* CarListPresenterProtocol.swift */; };
+		F626539626298B000045651D /* CarListInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539526298B000045651D /* CarListInteractorProtocol.swift */; };
+		F626539926298B140045651D /* CarListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539826298B140045651D /* CarListRouterProtocol.swift */; };
+		F626539F26298FCA0045651D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539E26298FCA0045651D /* Car.swift */; };
+		F62653A5262990420045651D /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62653A4262990420045651D /* Body.swift */; };
+		F65457B0262A962A00AB3D8B /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457AF262A962A00AB3D8B /* CarViewController.swift */; };
+		F65457B3262A97C200AB3D8B /* CarViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457B2262A97C200AB3D8B /* CarViewControllerProtocol.swift */; };
+		F65457B6262A97DF00AB3D8B /* CarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457B5262A97DF00AB3D8B /* CarPresenterProtocol.swift */; };
+		F65457B9262A97E700AB3D8B /* CarInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457B8262A97E700AB3D8B /* CarInteractorProtocol.swift */; };
+		F65457BC262A980B00AB3D8B /* CarRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457BB262A980B00AB3D8B /* CarRouterProtocol.swift */; };
+		F65457BF262A981C00AB3D8B /* CarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457BE262A981C00AB3D8B /* CarPresenter.swift */; };
+		F65457C2262A982400AB3D8B /* CarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457C1262A982400AB3D8B /* CarInteractor.swift */; };
+		F65457C6262A983000AB3D8B /* CarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457C5262A983000AB3D8B /* CarRouter.swift */; };
+		F65457C9262A983900AB3D8B /* CarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457C8262A983900AB3D8B /* CarAssembly.swift */; };
+		F68F7312262995F4002E093E /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F7311262995F4002E093E /* CarTableViewCell.swift */; };
+		F68F73172629E8C2002E093E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F73162629E8C2002E093E /* StorageService.swift */; };
+		F69678A52629F05300D66F41 /* CarObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69678A42629F05300D66F41 /* CarObject.swift */; };
 		F6E46544262852B3008FFD5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E46543262852B3008FFD5B /* AppDelegate.swift */; };
 		F6E46546262852B3008FFD5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E46545262852B3008FFD5B /* SceneDelegate.swift */; };
-		F6E46548262852B3008FFD5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E46547262852B3008FFD5B /* ViewController.swift */; };
-		F6E4654B262852B3008FFD5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E46549262852B3008FFD5B /* Main.storyboard */; };
 		F6E4654D262852B5008FFD5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E4654C262852B5008FFD5B /* Assets.xcassets */; };
 		F6E46550262852B5008FFD5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E4654E262852B5008FFD5B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01B916E2B7E57E1B7A14566E /* Pods-CarRecorder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRecorder.debug.xcconfig"; path = "Target Support Files/Pods-CarRecorder/Pods-CarRecorder.debug.xcconfig"; sourceTree = "<group>"; };
+		058F817ED584AE6CE91E2F84 /* Pods-CarRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRecorder.release.xcconfig"; path = "Target Support Files/Pods-CarRecorder/Pods-CarRecorder.release.xcconfig"; sourceTree = "<group>"; };
+		3EC49F33EDBBB754606DFD67 /* Pods_CarRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F626538026298A8E0045651D /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		F626538326298AA70045651D /* CarListViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewControllerProtocol.swift; sourceTree = "<group>"; };
+		F626538626298AB60045651D /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
+		F626538926298AC60045651D /* CarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
+		F626538C26298AD20045651D /* CarListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouter.swift; sourceTree = "<group>"; };
+		F626538F26298AE10045651D /* CarListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListAssembly.swift; sourceTree = "<group>"; };
+		F626539226298AF20045651D /* CarListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenterProtocol.swift; sourceTree = "<group>"; };
+		F626539526298B000045651D /* CarListInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractorProtocol.swift; sourceTree = "<group>"; };
+		F626539826298B140045651D /* CarListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouterProtocol.swift; sourceTree = "<group>"; };
+		F626539E26298FCA0045651D /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		F62653A4262990420045651D /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		F65457AF262A962A00AB3D8B /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		F65457B2262A97C200AB3D8B /* CarViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarViewControllerProtocol.swift; path = CarRecorder/Modules/Car/Protocols/CarViewControllerProtocol.swift; sourceTree = SOURCE_ROOT; };
+		F65457B5262A97DF00AB3D8B /* CarPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarPresenterProtocol.swift; path = CarRecorder/Modules/Car/Protocols/CarPresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
+		F65457B8262A97E700AB3D8B /* CarInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInteractorProtocol.swift; sourceTree = "<group>"; };
+		F65457BB262A980B00AB3D8B /* CarRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarRouterProtocol.swift; path = CarRecorder/Modules/Car/Protocols/CarRouterProtocol.swift; sourceTree = SOURCE_ROOT; };
+		F65457BE262A981C00AB3D8B /* CarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarPresenter.swift; path = CarRecorder/Modules/CarList/CarPresenter.swift; sourceTree = SOURCE_ROOT; };
+		F65457C1262A982400AB3D8B /* CarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInteractor.swift; sourceTree = "<group>"; };
+		F65457C5262A983000AB3D8B /* CarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarRouter.swift; path = CarRecorder/Modules/CarList/CarRouter.swift; sourceTree = SOURCE_ROOT; };
+		F65457C8262A983900AB3D8B /* CarAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarAssembly.swift; path = CarRecorder/Modules/CarList/CarAssembly.swift; sourceTree = SOURCE_ROOT; };
+		F68F7311262995F4002E093E /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		F68F73162629E8C2002E093E /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		F69678A42629F05300D66F41 /* CarObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarObject.swift; sourceTree = "<group>"; };
 		F6E46540262852B3008FFD5B /* CarRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E46543262852B3008FFD5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E46545262852B3008FFD5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6E46547262852B3008FFD5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F6E4654A262852B3008FFD5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6E4654C262852B5008FFD5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6E4654F262852B5008FFD5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6E46551262852B5008FFD5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +77,147 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C3162E2BDCDEC0BE0ACE37B /* Pods_CarRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A52D1D2688E05641FAA32DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EC49F33EDBBB754606DFD67 /* Pods_CarRecorder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C64F80EDA69B74BC10C06F91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01B916E2B7E57E1B7A14566E /* Pods-CarRecorder.debug.xcconfig */,
+				058F817ED584AE6CE91E2F84 /* Pods-CarRecorder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F626537D26298A170045651D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F65457AE262A95DC00AB3D8B /* Car */,
+				F626537F26298A720045651D /* CarList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F626537E26298A270045651D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F6E46543262852B3008FFD5B /* AppDelegate.swift */,
+				F6E46545262852B3008FFD5B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F626537F26298A720045651D /* CarList */ = {
+			isa = PBXGroup;
+			children = (
+				F68F7310262995DB002E093E /* Views */,
+				F626539B26298B220045651D /* Protocols */,
+				F626538026298A8E0045651D /* CarListViewController.swift */,
+				F626538626298AB60045651D /* CarListPresenter.swift */,
+				F626538926298AC60045651D /* CarListInteractor.swift */,
+				F626538C26298AD20045651D /* CarListRouter.swift */,
+				F626538F26298AE10045651D /* CarListAssembly.swift */,
+			);
+			path = CarList;
+			sourceTree = "<group>";
+		};
+		F626539B26298B220045651D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F626538326298AA70045651D /* CarListViewControllerProtocol.swift */,
+				F626539226298AF20045651D /* CarListPresenterProtocol.swift */,
+				F626539526298B000045651D /* CarListInteractorProtocol.swift */,
+				F626539826298B140045651D /* CarListRouterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F626539D26298FBF0045651D /* Entitites */ = {
+			isa = PBXGroup;
+			children = (
+				F626539E26298FCA0045651D /* Car.swift */,
+				F69678A42629F05300D66F41 /* CarObject.swift */,
+			);
+			path = Entitites;
+			sourceTree = "<group>";
+		};
+		F62653A2262990220045651D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F68F73152629E8AD002E093E /* Services */,
+				F62653A32629902D0045651D /* Enums */,
+				F626539D26298FBF0045651D /* Entitites */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F62653A32629902D0045651D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F62653A4262990420045651D /* Body.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F65457AE262A95DC00AB3D8B /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				F65457CB262A983E00AB3D8B /* Protocols */,
+				F65457AF262A962A00AB3D8B /* CarViewController.swift */,
+				F65457BE262A981C00AB3D8B /* CarPresenter.swift */,
+				F65457C1262A982400AB3D8B /* CarInteractor.swift */,
+				F65457C5262A983000AB3D8B /* CarRouter.swift */,
+				F65457C8262A983900AB3D8B /* CarAssembly.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		F65457CB262A983E00AB3D8B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F65457B2262A97C200AB3D8B /* CarViewControllerProtocol.swift */,
+				F65457B5262A97DF00AB3D8B /* CarPresenterProtocol.swift */,
+				F65457B8262A97E700AB3D8B /* CarInteractorProtocol.swift */,
+				F65457BB262A980B00AB3D8B /* CarRouterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F68F7310262995DB002E093E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F68F7311262995F4002E093E /* CarTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F68F73152629E8AD002E093E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F68F73162629E8C2002E093E /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F6E46537262852B3008FFD5B = {
 			isa = PBXGroup;
 			children = (
 				F6E46542262852B3008FFD5B /* CarRecorder */,
 				F6E46541262852B3008FFD5B /* Products */,
+				C64F80EDA69B74BC10C06F91 /* Pods */,
+				3A52D1D2688E05641FAA32DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +232,9 @@
 		F6E46542262852B3008FFD5B /* CarRecorder */ = {
 			isa = PBXGroup;
 			children = (
-				F6E46543262852B3008FFD5B /* AppDelegate.swift */,
-				F6E46545262852B3008FFD5B /* SceneDelegate.swift */,
-				F6E46547262852B3008FFD5B /* ViewController.swift */,
-				F6E46549262852B3008FFD5B /* Main.storyboard */,
+				F626537E26298A270045651D /* Application */,
+				F62653A2262990220045651D /* Common */,
+				F626537D26298A170045651D /* Modules */,
 				F6E4654C262852B5008FFD5B /* Assets.xcassets */,
 				F6E4654E262852B5008FFD5B /* LaunchScreen.storyboard */,
 				F6E46551262852B5008FFD5B /* Info.plist */,
@@ -74,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6E46554262852B5008FFD5B /* Build configuration list for PBXNativeTarget "CarRecorder" */;
 			buildPhases = (
+				71AB38D436C8F64E4784F48E /* [CP] Check Pods Manifest.lock */,
 				F6E4653C262852B3008FFD5B /* Sources */,
 				F6E4653D262852B3008FFD5B /* Frameworks */,
 				F6E4653E262852B3008FFD5B /* Resources */,
+				DE5FAE54EA3151071FF97F3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,34 +303,89 @@
 			files = (
 				F6E46550262852B5008FFD5B /* LaunchScreen.storyboard in Resources */,
 				F6E4654D262852B5008FFD5B /* Assets.xcassets in Resources */,
-				F6E4654B262852B3008FFD5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71AB38D436C8F64E4784F48E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarRecorder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE5FAE54EA3151071FF97F3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarRecorder/Pods-CarRecorder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarRecorder/Pods-CarRecorder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarRecorder/Pods-CarRecorder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6E4653C262852B3008FFD5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6E46548262852B3008FFD5B /* ViewController.swift in Sources */,
+				F626539026298AE10045651D /* CarListAssembly.swift in Sources */,
+				F626538D26298AD20045651D /* CarListRouter.swift in Sources */,
+				F626539F26298FCA0045651D /* Car.swift in Sources */,
+				F65457B3262A97C200AB3D8B /* CarViewControllerProtocol.swift in Sources */,
+				F626539926298B140045651D /* CarListRouterProtocol.swift in Sources */,
+				F626538426298AA70045651D /* CarListViewControllerProtocol.swift in Sources */,
 				F6E46544262852B3008FFD5B /* AppDelegate.swift in Sources */,
+				F65457C2262A982400AB3D8B /* CarInteractor.swift in Sources */,
 				F6E46546262852B3008FFD5B /* SceneDelegate.swift in Sources */,
+				F65457BC262A980B00AB3D8B /* CarRouterProtocol.swift in Sources */,
+				F69678A52629F05300D66F41 /* CarObject.swift in Sources */,
+				F65457B9262A97E700AB3D8B /* CarInteractorProtocol.swift in Sources */,
+				F65457BF262A981C00AB3D8B /* CarPresenter.swift in Sources */,
+				F65457B6262A97DF00AB3D8B /* CarPresenterProtocol.swift in Sources */,
+				F62653A5262990420045651D /* Body.swift in Sources */,
+				F68F7312262995F4002E093E /* CarTableViewCell.swift in Sources */,
+				F626538126298A8E0045651D /* CarListViewController.swift in Sources */,
+				F65457C6262A983000AB3D8B /* CarRouter.swift in Sources */,
+				F68F73172629E8C2002E093E /* StorageService.swift in Sources */,
+				F626539326298AF20045651D /* CarListPresenterProtocol.swift in Sources */,
+				F65457B0262A962A00AB3D8B /* CarViewController.swift in Sources */,
+				F626538A26298AC60045651D /* CarListInteractor.swift in Sources */,
+				F626538726298AB60045651D /* CarListPresenter.swift in Sources */,
+				F65457C9262A983900AB3D8B /* CarAssembly.swift in Sources */,
+				F626539626298B000045651D /* CarListInteractorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F6E46549262852B3008FFD5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6E4654A262852B3008FFD5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F6E4654E262852B5008FFD5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +515,7 @@
 		};
 		F6E46555262852B5008FFD5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B916E2B7E57E1B7A14566E /* Pods-CarRecorder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +535,7 @@
 		};
 		F6E46556262852B5008FFD5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058F817ED584AE6CE91E2F84 /* Pods-CarRecorder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
