@@ -29,7 +29,11 @@ extension CarListPresenter: CarListPresenterProtocol {
 //                                   body: .suv,
 //                                   yearOfIssue: nil,
 //                                   carNumber: "н123ка154"))
-        let allCars = self.interactor.getAllCars()
+        let allCars = self.interactor.getAllNeededCars()
         self.viewController?.configureView(using: allCars)
+    }
+    
+    func addCarButtonPressed() {
+        self.router.showCarScene()
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CarListInteractorProtocol: class {
+    var filteredBodies: [Body]? { get set }
     func addCar(_ car: Car)
-    func getAllCars() -> [Car]?
+    func getAllNeededCars() -> [Car]?
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class CarRouter {
     
-    weak var viewController: CarViewControllerProtocol?
+    weak var viewController: CarViewController?
     
     init(viewController: CarViewController) {
         self.viewController = viewController
@@ -17,5 +17,7 @@ class CarRouter {
 }
 
 extension CarRouter: CarRouterProtocol {
-    
+    func showCarListScene() {
+        self.viewController?.navigationController?.dismiss(animated: true)
+    }
 }

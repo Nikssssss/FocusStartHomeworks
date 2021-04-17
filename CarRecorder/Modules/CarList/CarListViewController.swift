@@ -20,6 +20,11 @@ class CarListViewController: UIViewController {
         super.viewDidLoad()
         self.presenter.configureView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //TODO: call presenter to revalidate cars
+    }
 
 }
 
@@ -69,10 +74,12 @@ private extension CarListViewController {
     func setupNavigationBar() {
         let addCarButton = UIBarButtonItem()
         addCarButton.title = "Добавить"
+        addCarButton.target = self
         addCarButton.action = #selector(self.addCarButtonPressed)
         self.navigationItem.rightBarButtonItem = addCarButton
         
         let filterButton = UIBarButtonItem()
+        filterButton.target = self
         filterButton.title = "Фильтры"
         filterButton.action = #selector(self.filterButtonPressed)
         self.navigationItem.leftBarButtonItem = filterButton
@@ -98,7 +105,7 @@ private extension CarListViewController {
     }
     
     @objc func addCarButtonPressed() {
-        
+        self.presenter.addCarButtonPressed()
     }
     
     @objc func filterButtonPressed() {

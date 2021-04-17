@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CarListRouterProtocol: class {
-    
+    func showCarScene() 
 }

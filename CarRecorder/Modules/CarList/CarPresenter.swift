@@ -8,7 +8,6 @@
 import Foundation
 
 class CarPresenter {
-    
     weak var viewController: CarViewControllerProtocol?
     var interactor: CarInteractorProtocol!
     var router: CarRouterProtocol!
@@ -20,16 +19,37 @@ class CarPresenter {
 
 extension CarPresenter: CarPresenterProtocol {
     func configureView() {
-//        self.interactor.addCar(Car(manufacturer: "Nissan",
-//                                   model: "Bluebird",
-//                                   body: .sedan, yearOfIssue: 1999,
-//                                   carNumber: "н547уо154"))
-//        self.interactor.addCar(Car(manufacturer: "Honda",
-//                                   model: "CR-V",
-//                                   body: .suv,
-//                                   yearOfIssue: nil,
-//                                   carNumber: "н123ка154"))
-        let allCars = self.interactor.getAllCars()
         self.viewController?.configureView()
+    }
+    
+    func cancelButtonPressed() {
+        self.router.showCarListScene()
+    }
+    
+    func addCarButtonPressed() {
+        guard let viewController = self.viewController else {
+            return
+        }
+        guard viewController.hasBlankRequiredFields() == false else {
+            viewController.showErrorMessage("Заполните все обязательные поля")
+            return
+        }
+        
+        var yearNumber: Int?
+        if let yearOfIssue = viewController.yearOfIssue, yearOfIssue != "" {
+            yearNumber = Int(yearOfIssue)
+            guard let yearNumber = yearNumber, yearNumber > 1886 else {
+                viewController.showErrorMessage("Введите корректное значение года выпуска")
+                return
+            }
+        }
+        let body = Body.init(rawValue: viewController.body) ?? Body.sedan
+        let car = Car(manufacturer: viewController.manufacturer,
+                      model: viewController.model,
+                      body: body,
+                      yearOfIssue: yearNumber,
+                      carNumber: viewController.carNumber)
+        self.interactor.addCar(car)
+        viewController.clearAllFields()
     }
 }

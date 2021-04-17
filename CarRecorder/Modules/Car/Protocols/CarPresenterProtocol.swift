@@ -9,4 +9,6 @@ import Foundation
 
 protocol CarPresenterProtocol: class {
     func configureView()
+    func cancelButtonPressed()
+    func addCarButtonPressed()
 }

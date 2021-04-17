@@ -9,19 +9,36 @@ import Foundation
 import RealmSwift
 
 class StorageService {
-    private lazy var realm = try? Realm()
-    private lazy var cars: Results<CarObject>? = {
-        self.realm?.objects(CarObject.self)
-    }()
+    private var realm = try? Realm()
     
     func getAllCars() -> [Car]? {
-        guard let cars = cars else {
-            print("Error during getting Realm")
+        guard let cars = self.realm?.objects(CarObject.self) else {
             return nil
         }
         var allCars = [Car]()
         for car in cars {
             let body = Body.init(rawValue: car.body)!
+            let yearOfIssue = car.yearOfIssue == -1 ? nil : car.yearOfIssue
+            let carNumber = car.carNumber == "" ? nil : car.carNumber
+            allCars.append(Car(manufacturer: car.manufacturer,
+                                     model: car.model,
+                                     body: body,
+                                     yearOfIssue: yearOfIssue,
+                                     carNumber: carNumber))
+        }
+        return allCars
+    }
+    
+    func getAllCars(with bodies: [Body]) -> [Car]? {
+        guard let cars = self.realm?.objects(CarObject.self) else {
+            return nil
+        }
+        var allCars = [Car]()
+        for car in cars {
+            let body = Body.init(rawValue: car.body)!
+            if bodies.contains(body) == false {
+                continue
+            }
             let yearOfIssue = car.yearOfIssue == -1 ? nil : car.yearOfIssue
             let carNumber = car.carNumber == "" ? nil : car.carNumber
             allCars.append(Car(manufacturer: car.manufacturer,
@@ -52,7 +69,6 @@ class StorageService {
                 }
                 realm.add(addingCarObject)
             }
-            cars = realm.objects(CarObject.self)
         } catch {
             print("Error during inserting a car")
             return
