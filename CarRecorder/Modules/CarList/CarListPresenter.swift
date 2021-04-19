@@ -20,20 +20,22 @@ class CarListPresenter {
 
 extension CarListPresenter: CarListPresenterProtocol {
     func configureView() {
-//        self.interactor.addCar(Car(manufacturer: "Nissan",
-//                                   model: "Bluebird",
-//                                   body: .sedan, yearOfIssue: 1999,
-//                                   carNumber: "н547уо154"))
-//        self.interactor.addCar(Car(manufacturer: "Honda",
-//                                   model: "CR-V",
-//                                   body: .suv,
-//                                   yearOfIssue: nil,
-//                                   carNumber: "н123ка154"))
         let allCars = self.interactor.getAllNeededCars()
         self.viewController?.configureView(using: allCars)
     }
     
     func addCarButtonPressed() {
         self.router.showCarScene()
+    }
+    
+    func filterButtonPressed() {
+        self.router.showCarFilterScene() { [weak self] body in
+            self?.interactor.filteredBody = body
+        }
+    }
+    
+    func viewWillAppear() {
+        let cars = self.interactor.getAllNeededCars()
+        self.viewController?.updateCars(to: cars)
     }
 }

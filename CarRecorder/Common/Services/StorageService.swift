@@ -29,14 +29,14 @@ class StorageService {
         return allCars
     }
     
-    func getAllCars(with bodies: [Body]) -> [Car]? {
+    func getAllCars(with carBody: Body) -> [Car]? {
         guard let cars = self.realm?.objects(CarObject.self) else {
             return nil
         }
         var allCars = [Car]()
         for car in cars {
             let body = Body.init(rawValue: car.body)!
-            if bodies.contains(body) == false {
+            if carBody != body {
                 continue
             }
             let yearOfIssue = car.yearOfIssue == -1 ? nil : car.yearOfIssue

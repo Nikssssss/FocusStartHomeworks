@@ -8,5 +8,6 @@
 import Foundation
 
 protocol CarListRouterProtocol: class {
-    func showCarScene() 
+    func showCarScene()
+    func showCarFilterScene(with completionHandler: @escaping (Body?) -> Void)
 }

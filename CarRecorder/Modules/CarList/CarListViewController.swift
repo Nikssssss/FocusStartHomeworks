@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class CarListViewController: UIViewController {
-
     var presenter: CarListPresenterProtocol!
     
     private var cars: [Car]?
@@ -23,7 +22,7 @@ class CarListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //TODO: call presenter to revalidate cars
+        self.presenter.viewWillAppear()
     }
 
 }
@@ -32,6 +31,11 @@ extension CarListViewController: CarListViewControllerProtocol {
     func configureView(using cars: [Car]?) {
         self.cars = cars
         self.setupView()
+    }
+    
+    func updateCars(to cars: [Car]?) {
+        self.cars = cars
+        self.carsTableView.reloadData()
     }
 }
 
@@ -109,6 +113,6 @@ private extension CarListViewController {
     }
     
     @objc func filterButtonPressed() {
-        
+        self.presenter.filterButtonPressed()
     }
 }

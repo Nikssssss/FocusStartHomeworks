@@ -10,7 +10,7 @@ import Foundation
 class CarListInteractor {
     weak var presenter: CarListPresenterProtocol?
     let storageService: StorageService
-    private var filters: [Body]?
+    private var filter: Body?
     
     init(presenter: CarListPresenter, storageService: StorageService) {
         self.presenter = presenter
@@ -19,12 +19,12 @@ class CarListInteractor {
 }
 
 extension CarListInteractor: CarListInteractorProtocol {
-    var filteredBodies: [Body]? {
+    var filteredBody: Body? {
         get {
-            return self.filters
+            return self.filter
         }
         set {
-            self.filters = newValue
+            self.filter = newValue
         }
     }
     
@@ -33,8 +33,8 @@ extension CarListInteractor: CarListInteractorProtocol {
     }
     
     func getAllNeededCars() -> [Car]? {
-        if let filters = self.filters {
-            let allFilteredCars = self.storageService.getAllCars(with: filters)
+        if let filter = self.filter {
+            let allFilteredCars = self.storageService.getAllCars(with: filter)
             return allFilteredCars
         } else {
             let allCars = self.storageService.getAllCars()

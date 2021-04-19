@@ -10,4 +10,6 @@ import Foundation
 protocol CarListPresenterProtocol: class {
     func configureView()
     func addCarButtonPressed()
+    func filterButtonPressed()
+    func viewWillAppear()
 }

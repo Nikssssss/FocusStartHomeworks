@@ -9,4 +9,5 @@ import Foundation
 
 protocol CarListViewControllerProtocol: class {
     func configureView(using cars: [Car]?)
+    func updateCars(to cars: [Car]?)
 }
