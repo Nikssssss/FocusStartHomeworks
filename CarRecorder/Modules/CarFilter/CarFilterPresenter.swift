@@ -20,7 +20,7 @@ class CarFilterPresenter {
 extension CarFilterPresenter: CarFilterPresenterProtocol {
     func configureView() {
         let bodies = self.interactor.getAllBodies()
-        let filters = ["Все типы кузовов"] + bodies.map { (body) -> String in
+        let filters = [CarFilterConstants.allBodyTypes] + bodies.map { (body) -> String in
             return body.rawValue
         }
         self.viewController?.configureView(using: filters)

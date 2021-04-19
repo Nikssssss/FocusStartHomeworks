@@ -32,13 +32,13 @@ class CarViewController: UIViewController {
 
 extension CarViewController: CarViewControllerProtocol {
     var manufacturer: String {
-        return manufacturerTextField.text ?? ""
+        return manufacturerTextField.text ?? CarConstants.emptyText
     }
     var model: String {
-        return modelTextField.text ?? ""
+        return modelTextField.text ?? CarConstants.emptyText
     }
     var body: String {
-        return bodyTextField.text ?? ""
+        return bodyTextField.text ?? CarConstants.emptyText
     }
     var yearOfIssue: String? {
         if let text = yearOfIssueTextField.text, text.isEmpty == false {
@@ -70,8 +70,8 @@ extension CarViewController: CarViewControllerProtocol {
     }
     
     func showErrorMessage(_ errorMessage: String) {
-        let alert = UIAlertController(title: "Ошибка", message: errorMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        let alert = UIAlertController(title: CarConstants.alertTitle, message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: CarConstants.alertOkTitle, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -120,19 +120,19 @@ private extension CarViewController {
         self.view.backgroundColor = .white
         self.setupNavigationBar()
         self.setupLabelWithTextField(self.manufacturerTextField,
-                                     named: "Производитель *",
+                                     named: CarConstants.manufactureLabelText,
                                      topAnchor: self.view)
         self.setupLabelWithTextField(self.modelTextField,
-                                     named: "Модель *",
+                                     named: CarConstants.modelLabelText,
                                      topAnchor: self.manufacturerTextField.snp.bottom)
         self.setupLabelWithTextField(self.bodyTextField,
-                                     named: "Тип кузова *",
+                                     named: CarConstants.bodyLabelText,
                                      topAnchor: self.modelTextField.snp.bottom)
         self.setupLabelWithTextField(self.yearOfIssueTextField,
-                                     named: "Год выпуска",
+                                     named: CarConstants.yearOfIssueLabelText,
                                      topAnchor: self.bodyTextField.snp.bottom)
         self.setupLabelWithTextField(self.carNumberTextField,
-                                     named: "Гос. номер",
+                                     named: CarConstants.carNumberLabelText,
                                      topAnchor: self.yearOfIssueTextField.snp.bottom)
         self.setupPickerView()
         self.setupAddCarButton()
@@ -140,13 +140,13 @@ private extension CarViewController {
     
     func setupNavigationBar() {
         let cancelButton = UIBarButtonItem()
-        cancelButton.title = "Отменить"
+        cancelButton.title = CarConstants.cancelButtonTitle
         cancelButton.target = self
         cancelButton.action = #selector(self.cancelButtonPressed)
         self.navigationItem.leftBarButtonItem = cancelButton
         
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Добавление машины"
+        self.navigationItem.title = CarConstants.navigationItemTitle
         self.navigationController?.navigationBar.barTintColor = .white
     }
     
@@ -170,11 +170,8 @@ private extension CarViewController {
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(40)
         }
-        textField.backgroundColor = UIColor(red: 240 / 255.0,
-                                            green: 240 / 255.0,
-                                            blue: 240 / 255.0,
-                                            alpha: 1.0)
-        textField.layer.cornerRadius = 5
+        textField.backgroundColor = CarConstants.textFieldBackgroundColor
+        textField.layer.cornerRadius = CarConstants.textFieldCornerRadius
         textField.autocorrectionType = .no
     }
     
@@ -186,11 +183,11 @@ private extension CarViewController {
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        let button = UIBarButtonItem(title: "Done",
+        let doneButton = UIBarButtonItem(title: CarConstants.doneButtonTitle,
                                      style: .plain,
                                      target: self,
                                      action: #selector(self.dismissPickerView))
-        toolBar.setItems([button], animated: true)
+        toolBar.setItems([doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         self.bodyTextField.inputAccessoryView = toolBar
         
@@ -198,7 +195,8 @@ private extension CarViewController {
     }
     
     func setupAddCarButton() {
-        self.addCarButton.setTitle("Добавить", for: .normal)
+        self.addCarButton.setTitle(CarConstants.addCarButtonTitle, for: .normal)
+        self.addCarButton.setTitleColor(.black, for: .normal)
         self.view.addSubview(self.addCarButton)
         self.addCarButton.translatesAutoresizingMaskIntoConstraints = false
         self.addCarButton.snp.makeConstraints { make in
@@ -207,13 +205,11 @@ private extension CarViewController {
             make.width.equalTo(150)
             make.height.equalTo(45)
         }
-        self.addCarButton.layer.cornerRadius = 10
+        self.addCarButton.layer.cornerRadius = CarConstants.addCarButtonCornerRadius
         self.addCarButton.addTarget(self,
                                     action: #selector(self.addCarButtonPressed),
                                     for: .touchUpInside)
-        self.addCarButton.setTitleColor(.darkGray,
-                                        for: .normal)
-        self.addCarButton.layer.borderWidth = 0.5
+        self.addCarButton.layer.borderWidth = CarConstants.addCarButtonBorderWidth
     }
     
     func isEmptyTextField(_ textField: UITextField) -> Bool {

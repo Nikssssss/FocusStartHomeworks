@@ -55,7 +55,7 @@ extension CarListViewController: UITableViewDataSource {
             if let yearOfIssue = currentCar.yearOfIssue {
                 cell.setYearOfIssue(to: String(yearOfIssue))
             } else {
-                cell.setYearOfIssue(to: "-")
+                cell.setYearOfIssue(to: CarListConstants.defaultYearOfIssue)
             }
         }
         return cell
@@ -64,7 +64,7 @@ extension CarListViewController: UITableViewDataSource {
 
 extension CarListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 135;
+        return CarListConstants.carTableCellHeight;
     }
 }
  
@@ -77,19 +77,19 @@ private extension CarListViewController {
     
     func setupNavigationBar() {
         let addCarButton = UIBarButtonItem()
-        addCarButton.title = "Добавить"
+        addCarButton.title = CarListConstants.addCarButtonTitle
         addCarButton.target = self
         addCarButton.action = #selector(self.addCarButtonPressed)
         self.navigationItem.rightBarButtonItem = addCarButton
         
         let filterButton = UIBarButtonItem()
         filterButton.target = self
-        filterButton.title = "Фильтры"
+        filterButton.title = CarListConstants.filterButtonTitle
         filterButton.action = #selector(self.filterButtonPressed)
         self.navigationItem.leftBarButtonItem = filterButton
         
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Список машин"
+        self.navigationItem.title = CarListConstants.navigationItemTitle
         self.navigationController?.navigationBar.barTintColor = .white
     }
     

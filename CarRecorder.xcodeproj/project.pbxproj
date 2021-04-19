@@ -37,6 +37,9 @@
 		F6812D8F262D1C99007C96A1 /* CarFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812D8E262D1C99007C96A1 /* CarFilterInteractor.swift */; };
 		F6812D92262D1CA8007C96A1 /* CarFilterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812D91262D1CA8007C96A1 /* CarFilterRouter.swift */; };
 		F6812D95262D1CB4007C96A1 /* CarFilterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812D94262D1CB4007C96A1 /* CarFilterAssembly.swift */; };
+		F6812D9A262DC4A2007C96A1 /* CarListConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812D99262DC4A2007C96A1 /* CarListConstants.swift */; };
+		F6812D9E262DCACD007C96A1 /* CarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812D9D262DCACD007C96A1 /* CarConstants.swift */; };
+		F6812DA2262DCEF8007C96A1 /* CarFilterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6812DA1262DCEF8007C96A1 /* CarFilterConstants.swift */; };
 		F68F7312262995F4002E093E /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F7311262995F4002E093E /* CarTableViewCell.swift */; };
 		F68F73172629E8C2002E093E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F73162629E8C2002E093E /* StorageService.swift */; };
 		F69678A52629F05300D66F41 /* CarObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69678A42629F05300D66F41 /* CarObject.swift */; };
@@ -79,6 +82,9 @@
 		F6812D8E262D1C99007C96A1 /* CarFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarFilterInteractor.swift; path = CarRecorder/Modules/Car/CarFilterInteractor.swift; sourceTree = SOURCE_ROOT; };
 		F6812D91262D1CA8007C96A1 /* CarFilterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarFilterRouter.swift; path = CarRecorder/Modules/CarFilter/CarFilterRouter.swift; sourceTree = SOURCE_ROOT; };
 		F6812D94262D1CB4007C96A1 /* CarFilterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarFilterAssembly.swift; path = CarRecorder/Modules/CarFilter/CarFilterAssembly.swift; sourceTree = SOURCE_ROOT; };
+		F6812D99262DC4A2007C96A1 /* CarListConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListConstants.swift; sourceTree = "<group>"; };
+		F6812D9D262DCACD007C96A1 /* CarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarConstants.swift; sourceTree = "<group>"; };
+		F6812DA1262DCEF8007C96A1 /* CarFilterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterConstants.swift; sourceTree = "<group>"; };
 		F68F7311262995F4002E093E /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		F68F73162629E8C2002E093E /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		F69678A42629F05300D66F41 /* CarObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarObject.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		F626537F26298A720045651D /* CarList */ = {
 			isa = PBXGroup;
 			children = (
+				F6812D99262DC4A2007C96A1 /* CarListConstants.swift */,
 				F68F7310262995DB002E093E /* Views */,
 				F626539B26298B220045651D /* Protocols */,
 				F626538026298A8E0045651D /* CarListViewController.swift */,
@@ -193,6 +200,7 @@
 		F65457AE262A95DC00AB3D8B /* Car */ = {
 			isa = PBXGroup;
 			children = (
+				F6812D9D262DCACD007C96A1 /* CarConstants.swift */,
 				F65457CB262A983E00AB3D8B /* Protocols */,
 				F65457AF262A962A00AB3D8B /* CarViewController.swift */,
 				F65457BE262A981C00AB3D8B /* CarPresenter.swift */,
@@ -217,6 +225,7 @@
 		F6812D7A262D1B67007C96A1 /* CarFilter */ = {
 			isa = PBXGroup;
 			children = (
+				F6812DA1262DCEF8007C96A1 /* CarFilterConstants.swift */,
 				F6812D97262D1CBA007C96A1 /* Protocols */,
 				F6812D7C262D1B8F007C96A1 /* CarFilterViewController.swift */,
 				F6812D8B262D1C8A007C96A1 /* CarFilterPresenter.swift */,
@@ -407,6 +416,7 @@
 				F626538426298AA70045651D /* CarListViewControllerProtocol.swift in Sources */,
 				F6812D83262D1BF5007C96A1 /* CarFilterPresenterProtocol.swift in Sources */,
 				F6E46544262852B3008FFD5B /* AppDelegate.swift in Sources */,
+				F6812D9A262DC4A2007C96A1 /* CarListConstants.swift in Sources */,
 				F65457C2262A982400AB3D8B /* CarInteractor.swift in Sources */,
 				F6E46546262852B3008FFD5B /* SceneDelegate.swift in Sources */,
 				F6812D8F262D1C99007C96A1 /* CarFilterInteractor.swift in Sources */,
@@ -421,6 +431,7 @@
 				F6812D86262D1C6A007C96A1 /* CarFilterInteractorProtocol.swift in Sources */,
 				F68F7312262995F4002E093E /* CarTableViewCell.swift in Sources */,
 				F6812D80262D1BE4007C96A1 /* CarFilterViewControllerProtocol.swift in Sources */,
+				F6812D9E262DCACD007C96A1 /* CarConstants.swift in Sources */,
 				F626538126298A8E0045651D /* CarListViewController.swift in Sources */,
 				F65457C6262A983000AB3D8B /* CarRouter.swift in Sources */,
 				F68F73172629E8C2002E093E /* StorageService.swift in Sources */,
@@ -431,6 +442,7 @@
 				F626538A26298AC60045651D /* CarListInteractor.swift in Sources */,
 				F626538726298AB60045651D /* CarListPresenter.swift in Sources */,
 				F65457C9262A983900AB3D8B /* CarAssembly.swift in Sources */,
+				F6812DA2262DCEF8007C96A1 /* CarFilterConstants.swift in Sources */,
 				F626539626298B000045651D /* CarListInteractorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

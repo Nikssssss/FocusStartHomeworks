@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class CarTableViewCell: UITableViewCell {
-    static let identifier = "CarTableViewCell"
+    static let identifier = CarListConstants.carTableCellIdentifier
     
     private let manufactureLabel = UILabel()
     private let modelLabel = UILabel()
@@ -22,34 +22,35 @@ class CarTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CarListConstants.initError)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 5,
-                                                                               left: 10,
-                                                                               bottom: 5,
-                                                                               right: 10))
-        self.contentView.layer.borderWidth = 0.4
-        self.contentView.layer.borderColor = UIColor.gray.cgColor
-        self.contentView.layer.cornerRadius = 10
+        self.contentView.frame = self.contentView.frame.inset(by: CarListConstants.cellInsets)
+        self.contentView.layer.borderWidth = CarListConstants.cellBorderWidth
+        self.contentView.layer.borderColor = CarListConstants.cellBorderColor
+        self.contentView.layer.cornerRadius = CarListConstants.cellBorderCornerRadius
     }
     
     func setManufacture(to manufacture: String) {
-        self.manufactureLabel.text = "Производитель: \(manufacture)"
+        let manufactureText = CarListConstants.manufactureTemplateText + manufacture
+        self.manufactureLabel.text = manufactureText
     }
     
     func setModel(to model: String) {
-        self.modelLabel.text = "Модель: \(model)"
+        let modelText = CarListConstants.modelTemplateText + model
+        self.modelLabel.text = modelText
     }
     
     func setBody(to body: Body) {
-        self.bodyLabel.text = "Тип кузова: \(body.rawValue)"
+        let bodyText = CarListConstants.bodyTemplateText + body.rawValue
+        self.bodyLabel.text = bodyText
     }
     
     func setYearOfIssue(to yearOfIssue: String) {
-        self.yearOfIssueLabel.text = "Год выпуска: \(yearOfIssue)"
+        let yearOfIssueText = CarListConstants.yearOfIssueTemplateText + yearOfIssue
+        self.yearOfIssueLabel.text = yearOfIssueText
     }
 }
 
@@ -64,8 +65,8 @@ private extension CarTableViewCell {
     }
     
     func setupMainLabel(_ label: UILabel, topAnchor: ConstraintRelatableTarget) {
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .orange
+        label.font = CarListConstants.mainLabelFont
+        label.textColor = CarListConstants.mainLabelTextColor
         self.contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.snp.makeConstraints { (make) in
@@ -77,8 +78,8 @@ private extension CarTableViewCell {
     }
     
     func setupAdditionalLabel(_ label: UILabel, topAnchor: ConstraintRelatableTarget) {
-        label.font = .systemFont(ofSize: 13, weight: .light)
-        label.textColor = .darkGray
+        label.font = CarListConstants.additionalLabelFont
+        label.textColor = CarListConstants.additionalLabelTextColor
         self.contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.snp.makeConstraints { (make) in

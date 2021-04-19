@@ -31,15 +31,15 @@ extension CarPresenter: CarPresenterProtocol {
             return
         }
         guard viewController.hasBlankRequiredFields() == false else {
-            viewController.showErrorMessage("Заполните все обязательные поля")
+            viewController.showErrorMessage(CarConstants.fillInAllRequiredFieldsError)
             return
         }
         
         var yearNumber: Int?
-        if let yearOfIssue = viewController.yearOfIssue, yearOfIssue != "" {
+        if let yearOfIssue = viewController.yearOfIssue, yearOfIssue.isEmpty == false {
             yearNumber = Int(yearOfIssue)
-            guard let yearNumber = yearNumber, yearNumber > 1886 else {
-                viewController.showErrorMessage("Введите корректное значение года выпуска")
+            guard let yearNumber = yearNumber, yearNumber > CarConstants.minimalCarYearOfIssue else {
+                viewController.showErrorMessage(CarConstants.enterCorrectYearError)
                 return
             }
         }

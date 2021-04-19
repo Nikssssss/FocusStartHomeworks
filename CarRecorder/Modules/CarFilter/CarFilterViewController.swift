@@ -68,13 +68,13 @@ private extension CarFilterViewController {
     
     func setupNavigationBar() {
         let readyButton = UIBarButtonItem()
-        readyButton.title = "Готово"
+        readyButton.title = CarFilterConstants.readyButtonTitle
         readyButton.target = self
         readyButton.action = #selector(self.readyButtonPressed)
         self.navigationItem.rightBarButtonItem = readyButton
         
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Фильтры"
+        self.navigationItem.title = CarFilterConstants.navigationItemTitle
         self.navigationController?.navigationBar.barTintColor = .white
     }
     
