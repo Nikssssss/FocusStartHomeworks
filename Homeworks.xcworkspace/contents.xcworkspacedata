@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../CarRecorder/CarRecorder.xcodeproj">
+      location = "group:ThreadSafeArray/../CarRecorder.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ThreadSafeArray/ThreadSafeArray.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../CarRecorder/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
