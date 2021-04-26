@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../CarRecorder/CarRecorder.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ThreadSafeArray/ThreadSafeArray.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../CarRecorder/Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
