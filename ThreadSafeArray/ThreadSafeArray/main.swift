@@ -16,12 +16,9 @@ for _ in 0...1 {
     dispatchGroup.enter()
     globalQueue.async() {
         for number in 0...maxIteration {
-            threadSafeArray.append(number) {
-                if number == maxIteration {
-                    dispatchGroup.leave()
-                }
-            }
+            threadSafeArray.append(number)
         }
+        dispatchGroup.leave()
     }
 }
 

@@ -12,75 +12,40 @@ class ThreadSafeArray<T: Equatable> {
     private let queue = DispatchQueue(label: "com.threadsafearray.queue", attributes: .concurrent)
     
     var count: Int {
-        self.queue.sync { [weak self] in
-            guard let self = self else {
-                return 0
-            }
+        self.queue.sync {
             return self.array.count
         }
     }
     
     var isEmpty: Bool {
-        self.queue.sync { [weak self] in
-            guard let self = self else {
-                return true
-            }
+        self.queue.sync {
             return self.array.isEmpty
         }
     }
     
     func append(_ item: T) {
         self.queue.async(flags: .barrier) { [weak self] in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             self.array.append(item)
-        }
-    }
-    
-    func append(_ item: T, completion: @escaping () -> ()) {
-        self.queue.async(flags: .barrier) { [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.array.append(item)
-            completion()
         }
     }
     
     func remove(at index: Int) {
         self.queue.async(flags: .barrier) { [weak self] in
-            guard let self = self, (0..<self.array.count).contains(index) else {
-                return
-            }
+            guard let self = self, index >= 0, index < self.array.count else { return }
             self.array.remove(at: index)
-        }
-    }
-    
-    func remove(at index: Int, completion: @escaping () -> ()) {
-        self.queue.async(flags: .barrier) { [weak self] in
-            guard let self = self, (0..<self.array.count).contains(index) else {
-                return
-            }
-            self.array.remove(at: index)
-            completion()
         }
     }
     
     subscript(index: Int) -> T? {
-        self.queue.sync { [weak self] in
-            guard let self = self, (0..<self.array.count).contains(index) else {
-                return nil
-            }
+        self.queue.sync {
+            guard index >= 0, index < self.array.count else { return nil }
             return self.array[index]
         }
     }
     
     func contains(_ element: T) -> Bool {
-        self.queue.sync { [weak self] in
-            guard let self = self else {
-                return false
-            }
+        self.queue.sync {
             return self.array.contains(element)
         }
     }
