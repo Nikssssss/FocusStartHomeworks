@@ -11,7 +11,7 @@
         <!--Информация-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DeveloperViewController" customModule="Autobiography" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,11 +206,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myemail@cft.ru" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3E-d0-j8B">
-                                <rect key="frame" x="26" y="604" width="142" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myemail@example.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3E-d0-j8B">
+                                <rect key="frame" x="26" y="604" width="217" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="142" id="WJI-bG-RYp"/>
-                                    <constraint firstAttribute="height" constant="24" id="bS3-eP-OiG"/>
+                                    <constraint firstAttribute="width" constant="217" id="6gh-pj-b2f"/>
+                                    <constraint firstAttribute="height" constant="24" id="w8S-0U-rhh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -230,7 +230,6 @@
                             <constraint firstItem="lZa-a8-V1l" firstAttribute="top" secondItem="mvq-su-F9Q" secondAttribute="bottom" constant="-3" id="EHJ-5p-fOt"/>
                             <constraint firstItem="mL6-8a-gju" firstAttribute="top" secondItem="IFL-aU-x9W" secondAttribute="bottom" constant="-1" id="Fgj-0D-jJA"/>
                             <constraint firstItem="jIu-vR-62B" firstAttribute="top" secondItem="9ua-2R-nne" secondAttribute="bottom" constant="15" id="GGa-fg-C0W"/>
-                            <constraint firstItem="M3E-d0-j8B" firstAttribute="top" secondItem="8zQ-t5-hnc" secondAttribute="bottom" constant="-3" id="Jfj-pe-alF"/>
                             <constraint firstItem="RgX-nw-fbS" firstAttribute="top" secondItem="rLy-AV-ZZX" secondAttribute="bottom" constant="-3" id="Jtd-uA-Egu"/>
                             <constraint firstItem="8zQ-t5-hnc" firstAttribute="top" secondItem="Ld6-Pn-qKG" secondAttribute="bottom" constant="-1" id="KDN-GH-TOM"/>
                             <constraint firstItem="qPS-gh-FVB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="M9q-lF-bYn"/>
@@ -245,6 +244,7 @@
                             <constraint firstItem="lZa-a8-V1l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Z28-sf-afw"/>
                             <constraint firstItem="RgX-nw-fbS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Z5z-F8-2Sl"/>
                             <constraint firstItem="rLy-AV-ZZX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Z8Z-yR-8OQ"/>
+                            <constraint firstItem="M3E-d0-j8B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="aI6-Cf-Iye"/>
                             <constraint firstItem="qPS-gh-FVB" firstAttribute="top" secondItem="1D9-DS-ZRB" secondAttribute="bottom" constant="-3" id="fAU-mH-FJG"/>
                             <constraint firstItem="IFL-aU-x9W" firstAttribute="top" secondItem="fTg-EA-kQi" secondAttribute="bottom" constant="-3" id="fsC-aF-gbi"/>
                             <constraint firstItem="9ua-2R-nne" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="hBH-DF-HGC"/>
@@ -253,9 +253,9 @@
                             <constraint firstItem="8zQ-t5-hnc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="lHy-C1-q0z"/>
                             <constraint firstItem="1D9-DS-ZRB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="lNJ-Cc-7ce"/>
                             <constraint firstItem="W1D-2e-WAe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="lrF-i4-U5n"/>
-                            <constraint firstItem="M3E-d0-j8B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="uNd-2M-aNT"/>
                             <constraint firstItem="mvq-su-F9Q" firstAttribute="top" secondItem="TLh-iJ-GvS" secondAttribute="bottom" id="vUY-WQ-J5M"/>
                             <constraint firstItem="Ld6-Pn-qKG" firstAttribute="top" secondItem="jIu-vR-62B" secondAttribute="bottom" constant="-3" id="wgJ-kK-xTi"/>
+                            <constraint firstItem="M3E-d0-j8B" firstAttribute="top" secondItem="8zQ-t5-hnc" secondAttribute="bottom" constant="-3" id="yEz-SZ-a8a"/>
                             <constraint firstItem="Ld6-Pn-qKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="ydf-Qy-xGR"/>
                             <constraint firstItem="G0x-Ng-DyQ" firstAttribute="top" secondItem="qPS-gh-FVB" secondAttribute="bottom" constant="16" id="yfq-2q-z9P"/>
                             <constraint firstItem="jIu-vR-62B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="z1Y-QW-z3f"/>
@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="-127"/>
+            <point key="canvasLocation" x="860.86956521739137" y="-127.23214285714285"/>
         </scene>
         <!--Item-->
         <scene sceneID="ygG-v1-jLJ">
