@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HobbyView: UIView {
+class HobbyCardView: UIView {
     private let hobbyTitleLabel = UILabel()
     private let hobbyDescriptionLabel = UILabel()
     private let showDescriptionButton = UIButton()
@@ -34,7 +34,7 @@ class HobbyView: UIView {
     }
 }
 
-private extension HobbyView {
+private extension HobbyCardView {
     func setupView() {
         self.layer.cornerRadius = 15
         self.layer.shadowOffset = CGSize(width: 4, height: 4)

@@ -9,7 +9,7 @@ import UIKit
 
 class HobbyViewController: UIViewController {
     private let showNextHobbyButton = UIButton()
-    private var hobbyViews = [HobbyView]()
+    private var hobbyViews = [HobbyCardView]()
     private var hobbies = [Hobby]()
     
     private var currentShowingHobbyView = 0
@@ -72,7 +72,7 @@ private extension HobbyViewController {
     
     func setupHobbyViews() {
         for hobby in self.hobbies.reversed() {
-            let hobbyView = HobbyView()
+            let hobbyView = HobbyCardView()
             hobbyView.setHobbyTitle(to: hobby.hobbyTitle)
             hobbyView.setHobbyDescription(to: hobby.hobbyDescription)
             hobbyView.backgroundColor = .orange
