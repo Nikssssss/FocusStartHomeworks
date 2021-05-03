@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860.86956521739137" y="-127.23214285714285"/>
+            <point key="canvasLocation" x="-758" y="-512"/>
         </scene>
         <!--Item-->
         <scene sceneID="ygG-v1-jLJ">
@@ -279,7 +279,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="yND-2W-aXT" kind="relationship" relationship="rootViewController" id="hbt-bO-uYg"/>
+                        <segue destination="yZo-qh-1eD" kind="relationship" relationship="rootViewController" id="iN9-F7-uoE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02a-lb-BtV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -289,7 +289,7 @@
         <!--Item 2-->
         <scene sceneID="WHN-YU-9Dz">
             <objects>
-                <viewController id="yND-2W-aXT" sceneMemberID="viewController">
+                <viewController id="yND-2W-aXT" customClass="HobbyViewController" customModule="Autobiography" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uSd-Dz-o9f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UW2-m6-rAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733" y="240"/>
+            <point key="canvasLocation" x="855" y="-127"/>
         </scene>
         <!--Item-->
         <scene sceneID="hxP-UY-Vhr">
@@ -313,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="yZo-qh-1eD" kind="relationship" relationship="rootViewController" id="Zuv-3N-Yug"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3Rq-fR-nAs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hJ-2D-5Fn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbJ-I5-EoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="-512"/>
+            <point key="canvasLocation" x="-759" y="240"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l8J-zK-UYg">
@@ -366,7 +366,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f9Y-uS-f2r"/>
+                        <segue destination="yND-2W-aXT" kind="relationship" relationship="rootViewController" id="Uqf-et-0Uz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLR-GC-2Tj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

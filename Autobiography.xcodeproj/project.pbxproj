@@ -14,6 +14,9 @@
 		F6B723F5263DA95D00259916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B723F3263DA95D00259916 /* Main.storyboard */; };
 		F6B723F7263DA95F00259916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6B723F6263DA95F00259916 /* Assets.xcassets */; };
 		F6B723FA263DA96000259916 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B723F8263DA96000259916 /* LaunchScreen.storyboard */; };
+		F6E7D10F263FE3F900C544BD /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D10E263FE3F900C544BD /* HobbyViewController.swift */; };
+		F6E7D115263FE70100C544BD /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D114263FE70100C544BD /* HobbyView.swift */; };
+		F6E7D118263FEEE000C544BD /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D117263FEEE000C544BD /* Hobby.swift */; };
 		F6E8A5BA263DB9AB00A243E8 /* DeveloperInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E8A5B9263DB9AB00A243E8 /* DeveloperInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		F6B723F6263DA95F00259916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6B723F9263DA96000259916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6B723FB263DA96000259916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6E7D10E263FE3F900C544BD /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		F6E7D114263FE70100C544BD /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
+		F6E7D117263FEEE000C544BD /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		F6E8A5B9263DB9AB00A243E8 /* DeveloperInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,16 +88,43 @@
 		F6B723EC263DA95D00259916 /* Autobiography */ = {
 			isa = PBXGroup;
 			children = (
-				F6B723ED263DA95D00259916 /* AppDelegate.swift */,
-				F6B723EF263DA95D00259916 /* SceneDelegate.swift */,
-				F6B723F1263DA95D00259916 /* DeveloperViewController.swift */,
+				F6E7D112263FE68B00C544BD /* Application */,
+				F6E7D111263FE67500C544BD /* Developer */,
+				F6E7D113263FE69F00C544BD /* Hobby */,
 				F6B723F3263DA95D00259916 /* Main.storyboard */,
 				F6B723F6263DA95F00259916 /* Assets.xcassets */,
 				F6B723F8263DA96000259916 /* LaunchScreen.storyboard */,
 				F6B723FB263DA96000259916 /* Info.plist */,
-				F6E8A5B9263DB9AB00A243E8 /* DeveloperInfo.swift */,
 			);
 			path = Autobiography;
+			sourceTree = "<group>";
+		};
+		F6E7D111263FE67500C544BD /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				F6B723F1263DA95D00259916 /* DeveloperViewController.swift */,
+				F6E8A5B9263DB9AB00A243E8 /* DeveloperInfo.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
+		F6E7D112263FE68B00C544BD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F6B723ED263DA95D00259916 /* AppDelegate.swift */,
+				F6B723EF263DA95D00259916 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F6E7D113263FE69F00C544BD /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				F6E7D10E263FE3F900C544BD /* HobbyViewController.swift */,
+				F6E7D114263FE70100C544BD /* HobbyView.swift */,
+				F6E7D117263FEEE000C544BD /* Hobby.swift */,
+			);
+			path = Hobby;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +243,11 @@
 			files = (
 				F6E8A5BA263DB9AB00A243E8 /* DeveloperInfo.swift in Sources */,
 				F6B723F2263DA95D00259916 /* DeveloperViewController.swift in Sources */,
+				F6E7D118263FEEE000C544BD /* Hobby.swift in Sources */,
+				F6E7D10F263FE3F900C544BD /* HobbyViewController.swift in Sources */,
 				F6B723EE263DA95D00259916 /* AppDelegate.swift in Sources */,
 				F6B723F0263DA95D00259916 /* SceneDelegate.swift in Sources */,
+				F6E7D115263FE70100C544BD /* HobbyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
