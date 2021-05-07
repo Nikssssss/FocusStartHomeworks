@@ -12,7 +12,7 @@ class CarFilterPresenter {
     var interactor: CarFilterInteractorProtocol!
     var router: CarFilterRouterProtocol!
     
-    init(viewController: CarFilterViewController) {
+    init(viewController: CarFilterViewControllerProtocol) {
         self.viewController = viewController
     }
 }

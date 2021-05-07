@@ -8,12 +8,10 @@
 import Foundation
 
 class CarListInteractor {
-    weak var presenter: CarListPresenterProtocol?
-    let storageService: StorageService
+    let storageService: StorageServiceProtocol
     private var filter: Body?
     
-    init(presenter: CarListPresenter, storageService: StorageService) {
-        self.presenter = presenter
+    init(storageService: StorageServiceProtocol) {
         self.storageService = storageService
     }
 }

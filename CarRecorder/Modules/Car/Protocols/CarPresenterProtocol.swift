@@ -11,4 +11,5 @@ protocol CarPresenterProtocol: class {
     func configureView()
     func cancelButtonPressed()
     func addCarButtonPressed()
+    func getAllBodies() -> [Body]
 }

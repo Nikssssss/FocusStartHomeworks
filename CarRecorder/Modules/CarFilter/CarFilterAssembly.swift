@@ -8,13 +8,12 @@
 import Foundation
 
 class CarFilterAssembly {
-    
     static func assemble() -> CarFilterViewController {
         let viewController = CarFilterViewController()
         let presenter = CarFilterPresenter(viewController: viewController)
         let router = CarFilterRouter(viewController: viewController)
         
-        let interactor = CarFilterInteractor(presenter: presenter)
+        let interactor = CarFilterInteractor()
         
         viewController.presenter = presenter
         presenter.interactor = interactor
@@ -22,5 +21,4 @@ class CarFilterAssembly {
         
         return viewController
     }
-    
 }

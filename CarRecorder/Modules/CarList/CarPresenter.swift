@@ -12,7 +12,7 @@ class CarPresenter {
     var interactor: CarInteractorProtocol!
     var router: CarRouterProtocol!
     
-    init(viewController: CarViewController) {
+    init(viewController: CarViewControllerProtocol) {
         self.viewController = viewController
     }
 }
@@ -51,5 +51,9 @@ extension CarPresenter: CarPresenterProtocol {
                       carNumber: viewController.carNumber)
         self.interactor.addCar(car)
         viewController.clearAllFields()
+    }
+    
+    func getAllBodies() -> [Body] {
+        return self.interactor.getAllBodies()
     }
 }

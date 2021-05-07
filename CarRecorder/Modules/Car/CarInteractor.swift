@@ -8,12 +8,9 @@
 import Foundation
 
 class CarInteractor {
+    let storageService: StorageServiceProtocol
     
-    weak var presenter: CarPresenterProtocol?
-    let storageService: StorageService
-    
-    init(presenter: CarPresenter, storageService: StorageService) {
-        self.presenter = presenter
+    init(storageService: StorageServiceProtocol) {
         self.storageService = storageService
     }
 }
@@ -21,5 +18,9 @@ class CarInteractor {
 extension CarInteractor: CarInteractorProtocol {
     func addCar(_ car: Car) {
         self.storageService.addCar(car)
+    }
+    
+    func getAllBodies() -> [Body] {
+        return Body.allCases
     }
 }

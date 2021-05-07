@@ -8,12 +8,11 @@
 import Foundation
 
 class CarListPresenter {
-    
     weak var viewController: CarListViewControllerProtocol?
     var interactor: CarListInteractorProtocol!
     var router: CarListRouterProtocol!
     
-    init(viewController: CarListViewController) {
+    init(viewController: CarListViewControllerProtocol) {
         self.viewController = viewController
     }
 }

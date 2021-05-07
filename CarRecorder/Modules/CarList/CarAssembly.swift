@@ -8,14 +8,13 @@
 import Foundation
 
 class CarAssembly {
-    
     static func assemble() -> CarViewController {
         let viewController = CarViewController()
         let presenter = CarPresenter(viewController: viewController)
         let router = CarRouter(viewController: viewController)
         
         let storageService = StorageService()
-        let interactor = CarInteractor(presenter: presenter, storageService: storageService)
+        let interactor = CarInteractor(storageService: storageService)
         
         viewController.presenter = presenter
         presenter.interactor = interactor
@@ -23,5 +22,4 @@ class CarAssembly {
         
         return viewController
     }
-    
 }

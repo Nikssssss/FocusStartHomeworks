@@ -19,6 +19,7 @@
 		F626539926298B140045651D /* CarListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539826298B140045651D /* CarListRouterProtocol.swift */; };
 		F626539F26298FCA0045651D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F626539E26298FCA0045651D /* Car.swift */; };
 		F62653A5262990420045651D /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62653A4262990420045651D /* Body.swift */; };
+		F63EF6A126456BD900AF723C /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EF6A026456BD900AF723C /* StorageServiceProtocol.swift */; };
 		F65457B0262A962A00AB3D8B /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457AF262A962A00AB3D8B /* CarViewController.swift */; };
 		F65457B3262A97C200AB3D8B /* CarViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457B2262A97C200AB3D8B /* CarViewControllerProtocol.swift */; };
 		F65457B6262A97DF00AB3D8B /* CarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65457B5262A97DF00AB3D8B /* CarPresenterProtocol.swift */; };
@@ -64,6 +65,7 @@
 		F626539826298B140045651D /* CarListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListRouterProtocol.swift; sourceTree = "<group>"; };
 		F626539E26298FCA0045651D /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		F62653A4262990420045651D /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		F63EF6A026456BD900AF723C /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		F65457AF262A962A00AB3D8B /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		F65457B2262A97C200AB3D8B /* CarViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarViewControllerProtocol.swift; path = CarRecorder/Modules/Car/Protocols/CarViewControllerProtocol.swift; sourceTree = SOURCE_ROOT; };
 		F65457B5262A97DF00AB3D8B /* CarPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarPresenterProtocol.swift; path = CarRecorder/Modules/Car/Protocols/CarPresenterProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				F68F73162629E8C2002E093E /* StorageService.swift */,
+				F63EF6A026456BD900AF723C /* StorageServiceProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F626539026298AE10045651D /* CarListAssembly.swift in Sources */,
+				F63EF6A126456BD900AF723C /* StorageServiceProtocol.swift in Sources */,
 				F626538D26298AD20045651D /* CarListRouter.swift in Sources */,
 				F626539F26298FCA0045651D /* Car.swift in Sources */,
 				F6812D89262D1C7F007C96A1 /* CarFilterRouterProtocol.swift in Sources */,

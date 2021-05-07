@@ -8,11 +8,6 @@
 import Foundation
 
 class CarFilterInteractor {
-    weak var presenter: CarFilterPresenterProtocol?
-    
-    init(presenter: CarFilterPresenter) {
-        self.presenter = presenter
-    }
 }
 
 extension CarFilterInteractor: CarFilterInteractorProtocol {

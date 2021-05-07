@@ -11,6 +11,14 @@ import RealmSwift
 class StorageService {
     private var realm = try? Realm()
     
+    deinit {
+        if let realm = self.realm  {
+            realm.invalidate()
+        }
+    }
+}
+
+extension StorageService: StorageServiceProtocol  {
     func getAllCars() -> [Car]? {
         guard let cars = self.realm?.objects(CarObject.self) else {
             return nil
@@ -72,12 +80,6 @@ class StorageService {
         } catch {
             print("Error during inserting a car")
             return
-        }
-    }
-    
-    deinit {
-        if let realm = self.realm  {
-            realm.invalidate()
         }
     }
 }

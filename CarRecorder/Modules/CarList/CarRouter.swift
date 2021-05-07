@@ -8,7 +8,6 @@
 import Foundation
 
 class CarRouter {
-    
     weak var viewController: CarViewController?
     
     init(viewController: CarViewController) {

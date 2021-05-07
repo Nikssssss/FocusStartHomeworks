@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class CarViewController: UIViewController {
-    
     var presenter: CarPresenterProtocol!
     var embeddedInNavigationController: UINavigationController {
         let carNavigationController = UINavigationController(rootViewController: self)
@@ -27,7 +26,6 @@ class CarViewController: UIViewController {
         super.viewDidLoad()
         self.presenter.configureView()
     }
-    
 }
 
 extension CarViewController: CarViewControllerProtocol {
@@ -90,14 +88,14 @@ extension CarViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let allBodies = Body.allCases
+        let allBodies = self.presenter.getAllBodies()
         return allBodies.count
     }
 }
 
 extension CarViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let allBodies = Body.allCases
+        let allBodies = self.presenter.getAllBodies()
         return allBodies[row].rawValue
     }
     

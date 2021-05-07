@@ -9,4 +9,5 @@ import Foundation
 
 protocol CarInteractorProtocol: class {
     func addCar(_ car: Car)
+    func getAllBodies() -> [Body]
 }
