@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C2DC0FD8E512E69E4A4DE2A /* Pods_Autobiography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA198F93A7B14C4DF4A33E6 /* Pods_Autobiography.framework */; };
+		F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F656D99226457C31003944F6 /* DeveloperConstants.swift */; };
+		F656D99626457E7C003944F6 /* HobbyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F656D99526457E7C003944F6 /* HobbyConstants.swift */; };
 		F6B723EE263DA95D00259916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B723ED263DA95D00259916 /* AppDelegate.swift */; };
 		F6B723F0263DA95D00259916 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B723EF263DA95D00259916 /* SceneDelegate.swift */; };
 		F6B723F2263DA95D00259916 /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B723F1263DA95D00259916 /* DeveloperViewController.swift */; };
@@ -24,6 +26,8 @@
 		2E562A2B436E270E91140DF4 /* Pods-Autobiography.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Autobiography.debug.xcconfig"; path = "Target Support Files/Pods-Autobiography/Pods-Autobiography.debug.xcconfig"; sourceTree = "<group>"; };
 		698BF16F2CDB7C7DF0127185 /* Pods-Autobiography.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Autobiography.release.xcconfig"; path = "Target Support Files/Pods-Autobiography/Pods-Autobiography.release.xcconfig"; sourceTree = "<group>"; };
 		EFA198F93A7B14C4DF4A33E6 /* Pods_Autobiography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Autobiography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F656D99226457C31003944F6 /* DeveloperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperConstants.swift; sourceTree = "<group>"; };
+		F656D99526457E7C003944F6 /* HobbyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyConstants.swift; sourceTree = "<group>"; };
 		F6B723EA263DA95D00259916 /* Autobiography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autobiography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B723ED263DA95D00259916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6B723EF263DA95D00259916 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			children = (
 				F6B723F1263DA95D00259916 /* DeveloperViewController.swift */,
 				F6E8A5B9263DB9AB00A243E8 /* DeveloperInfo.swift */,
+				F656D99226457C31003944F6 /* DeveloperConstants.swift */,
 			);
 			path = Developer;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				F6E7D10E263FE3F900C544BD /* HobbyViewController.swift */,
 				F6E7D114263FE70100C544BD /* HobbyCardView.swift */,
 				F6E7D117263FEEE000C544BD /* Hobby.swift */,
+				F656D99526457E7C003944F6 /* HobbyConstants.swift */,
 			);
 			path = Hobby;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 				F6E7D10F263FE3F900C544BD /* HobbyViewController.swift in Sources */,
 				F6B723EE263DA95D00259916 /* AppDelegate.swift in Sources */,
 				F6B723F0263DA95D00259916 /* SceneDelegate.swift in Sources */,
+				F656D99626457E7C003944F6 /* HobbyConstants.swift in Sources */,
+				F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */,
 				F6E7D115263FE70100C544BD /* HobbyCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

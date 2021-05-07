@@ -39,13 +39,13 @@ private extension HobbyViewController {
     
     func setupNavigationItem() {
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Мои хобби"
+        self.navigationItem.title = HobbyConstants.navigationItemTitle
     }
     
     func setupTabBarItem() {
         let tabBarItem = UITabBarItem()
-        tabBarItem.title = "Хобби"
-        tabBarItem.image = UIImage(systemName: "wand.and.stars")
+        tabBarItem.title = HobbyConstants.tabBarItemTitle
+        tabBarItem.image = HobbyConstants.tabBarItemImage
         self.tabBarItem = tabBarItem
     }
     
@@ -57,17 +57,17 @@ private extension HobbyViewController {
             make.width.equalTo(200)
             make.height.equalTo(50)
         }
-        self.showNextHobbyButton.setTitle("Cледующее хобби", for: .normal)
-        self.showNextHobbyButton.backgroundColor = .blue
-        self.showNextHobbyButton.layer.cornerRadius = 12
-        self.showNextHobbyButton.setTitleColor(.white, for: .normal)
+        self.showNextHobbyButton.setTitle(HobbyConstants.nextHobbyButtonTitle, for: .normal)
+        self.showNextHobbyButton.backgroundColor = HobbyConstants.nextHobbyButtonBackgroundColor
+        self.showNextHobbyButton.layer.cornerRadius = HobbyConstants.nextHobbyButtonCornerRadius
+        self.showNextHobbyButton.setTitleColor(HobbyConstants.nextHobbyButtonTitleColor, for: .normal)
         self.showNextHobbyButton.addTarget(self,
                                            action: #selector(self.showNextHobbyButtonPressed),
                                            for: .touchUpInside)
-        self.showNextHobbyButton.layer.shadowOffset = CGSize(width: 4, height: 4)
-        self.showNextHobbyButton.layer.shadowColor = UIColor.blue.cgColor
-        self.showNextHobbyButton.layer.shadowRadius = 3
-        self.showNextHobbyButton.layer.shadowOpacity = 0.4
+        self.showNextHobbyButton.layer.shadowOffset = HobbyConstants.nextHobbyButtonShadowOffset
+        self.showNextHobbyButton.layer.shadowColor = HobbyConstants.nextHobbyButtonShadowColor
+        self.showNextHobbyButton.layer.shadowRadius = HobbyConstants.nextHobbyButtonShadowRadius
+        self.showNextHobbyButton.layer.shadowOpacity = HobbyConstants.nextHobbyButtonShadowOpacity
     }
     
     func setupHobbyViews() {
@@ -75,7 +75,7 @@ private extension HobbyViewController {
             let hobbyView = HobbyCardView()
             hobbyView.setHobbyTitle(to: hobby.hobbyTitle)
             hobbyView.setHobbyDescription(to: hobby.hobbyDescription)
-            hobbyView.backgroundColor = .orange
+            hobbyView.backgroundColor = HobbyConstants.hobbyViewBackgroundColor
             hobbyView.delegate = self
             self.hobbyViews.append(hobbyView)
             
@@ -95,7 +95,7 @@ private extension HobbyViewController {
             return
         }
         UIView.animate(withDuration: 1) {
-            let betweenViewOffset: CGFloat = 10
+            let betweenViewOffset: CGFloat = HobbyConstants.betweenViewOffset
             let nextHobbyView = self.hobbyViews[self.currentShowingHobbyView - 1]
             let numberOfShowingHobbyViews = self.hobbyViews.count - self.currentShowingHobbyView
             nextHobbyView.frame.origin.y += CGFloat(numberOfShowingHobbyViews) *

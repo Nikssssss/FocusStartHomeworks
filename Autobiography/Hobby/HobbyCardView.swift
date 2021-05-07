@@ -22,7 +22,7 @@ class HobbyCardView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(HobbyConstants.initError)
     }
     
     func setHobbyTitle(to title: String) {
@@ -36,11 +36,11 @@ class HobbyCardView: UIView {
 
 private extension HobbyCardView {
     func setupView() {
-        self.layer.cornerRadius = 15
-        self.layer.shadowOffset = CGSize(width: 4, height: 4)
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowRadius = 2
-        self.layer.shadowOpacity = 0.5
+        self.layer.cornerRadius = HobbyConstants.hobbyCardViewCornerRadius
+        self.layer.shadowOffset = HobbyConstants.hobbyCardViewShadowOffset
+        self.layer.shadowColor = HobbyConstants.hobbyCardViewShadowColor
+        self.layer.shadowRadius = HobbyConstants.hobbyCardViewShadowRadius
+        self.layer.shadowOpacity = HobbyConstants.hobbyCardViewShadowOpacity
         self.setupHobbyTitleLabel()
         self.setupShowDescriptionButton()
         self.setupDescriptionSwitch()
@@ -54,8 +54,8 @@ private extension HobbyCardView {
             make.left.equalToSuperview().offset(15)
             make.width.equalToSuperview().multipliedBy(0.6)
         }
-        self.hobbyTitleLabel.textColor = .white
-        self.hobbyTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        self.hobbyTitleLabel.textColor = HobbyConstants.hobbyTitleLabelTextColor
+        self.hobbyTitleLabel.font = HobbyConstants.hobbyTitleLabelFont
     }
     
     func setupShowDescriptionButton() {
@@ -66,11 +66,11 @@ private extension HobbyCardView {
             make.right.equalToSuperview().offset(-10)
             make.height.equalTo(25)
         }
-        self.showDescriptionButton.setTitle("Подробнее", for: .normal)
-        self.showDescriptionButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .medium)
-        self.showDescriptionButton.backgroundColor = .purple
-        self.showDescriptionButton.layer.cornerRadius = 7
-        self.showDescriptionButton.setTitleColor(.white, for: .normal)
+        self.showDescriptionButton.setTitle(HobbyConstants.showDescriptionButtonTitle, for: .normal)
+        self.showDescriptionButton.titleLabel?.font = HobbyConstants.showDescriptionButtonTitleFont
+        self.showDescriptionButton.backgroundColor = HobbyConstants.showDescriptionButtonBackgroundColor
+        self.showDescriptionButton.layer.cornerRadius = HobbyConstants.showDescriptionButtonCornerRadius
+        self.showDescriptionButton.setTitleColor(HobbyConstants.showDescriptionButtonTitleColor, for: .normal)
         self.showDescriptionButton.addTarget(self,
                                              action: #selector(self.showDescriptionButtonPressed),
                                              for: .touchUpInside)
@@ -78,9 +78,9 @@ private extension HobbyCardView {
     
     func setupDescriptionSwitch() {
         let switchLabel = UILabel()
-        switchLabel.text = "Всплывающее окно"
-        switchLabel.font = .systemFont(ofSize: 10, weight: .medium)
-        switchLabel.textColor = .white
+        switchLabel.text = HobbyConstants.switchLabelText
+        switchLabel.font = HobbyConstants.switchLabelFont
+        switchLabel.textColor = HobbyConstants.switchLabelTextColor
         self.addSubview(switchLabel)
         switchLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.showDescriptionButton.snp.bottom).offset(7)
@@ -92,8 +92,8 @@ private extension HobbyCardView {
             make.top.equalTo(switchLabel.snp.bottom).offset(2)
             make.left.equalTo(switchLabel.snp.left)
         }
-        self.descriptionSwitch.backgroundColor = .lightGray
-        self.descriptionSwitch.layer.cornerRadius = 16
+        self.descriptionSwitch.backgroundColor = HobbyConstants.descriptionSwitchBackgroundColor
+        self.descriptionSwitch.layer.cornerRadius = HobbyConstants.descriptionSwitchCornerRadius
         self.descriptionSwitch.setOn(false, animated: true)
     }
     
@@ -104,8 +104,8 @@ private extension HobbyCardView {
             make.left.equalToSuperview().offset(15)
             make.right.equalTo(self.descriptionSwitch.snp.left).offset(-10)
         }
-        self.hobbyDescriptionLabel.textColor = .white
-        self.hobbyDescriptionLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        self.hobbyDescriptionLabel.textColor = HobbyConstants.hobbyDescriptionLabelTextColor
+        self.hobbyDescriptionLabel.font = HobbyConstants.hobbyDescriptionLabelFont
         self.hobbyDescriptionLabel.numberOfLines = 0
         self.hobbyDescriptionLabel.alpha = 0
     }
@@ -128,8 +128,10 @@ private extension HobbyCardView {
     }
     
     func showDescriptionLikeAnAlert(description: String) {
-        let alert = UIAlertController(title: "Подробнее", message: description, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default))
+        let alert = UIAlertController(title: HobbyConstants.descriptionAlertControllerTitle,
+                                      message: description,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: HobbyConstants.descriptionAlertControllerActionTitle, style: .default))
         self.delegate.present(alert, animated: true, completion: nil)
     }
 }

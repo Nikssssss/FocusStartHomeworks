@@ -8,8 +8,6 @@
 import UIKit
 
 class DeveloperViewController: UIViewController {
-    private let developerInfo = DeveloperInfo()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -18,29 +16,29 @@ class DeveloperViewController: UIViewController {
 
 private extension DeveloperViewController {
     func setupView() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = DeveloperConstants.viewBackgroundColor
         self.setupNavigationItem()
         self.setupTabBarItem()
-        var lastLabel = self.setupInformationBlock(title: "Как давно я занимаюсь программированием?",
-                                   text: developerInfo.startProgrammingText,
+        var lastLabel = self.setupInformationBlock(title: DeveloperInfo.startProgramminTitle,
+                                   text: DeveloperInfo.startProgrammingText,
                                    topAnchor: self.view.topAnchor)
-        lastLabel = self.setupInformationBlock(title: "Какие языки программирования я знаю?",
-                                   text: developerInfo.programmingLanguages,
+        lastLabel = self.setupInformationBlock(title: DeveloperInfo.programminLanguagesTitle,
+                                   text: DeveloperInfo.programmingLanguages,
                                    topAnchor: lastLabel.bottomAnchor)
-        self.setupInformationBlock(title: "Какие ожидания от Focus Start?",
-                                   text: developerInfo.focusStartExpectations,
+        self.setupInformationBlock(title: DeveloperInfo.focusStartExpectationsTitle,
+                                   text: DeveloperInfo.focusStartExpectations,
                                    topAnchor: lastLabel.bottomAnchor)
     }
     
     func setupNavigationItem() {
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Я - разработчик"
+        self.navigationItem.title = DeveloperConstants.navigationItemTitle
     }
     
     func setupTabBarItem() {
         let tabBarItem = UITabBarItem()
-        tabBarItem.title = "iOS"
-        tabBarItem.image = UIImage(systemName: "laptopcomputer.and.iphone")
+        tabBarItem.title = DeveloperConstants.tabBarItemTitle
+        tabBarItem.image = DeveloperConstants.tabBarItemImage
         self.tabBarItem = tabBarItem
     }
     
