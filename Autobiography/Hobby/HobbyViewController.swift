@@ -8,9 +8,12 @@
 import UIKit
 
 class HobbyViewController: UIViewController {
+    private let favouriteTeamsButton = UIButton()
     private let showNextHobbyButton = UIButton()
     private var hobbyViews = [HobbyCardView]()
     private var hobbies = [Hobby]()
+    
+    private let router = Router()
     
     private var currentShowingHobbyView = 0
     
@@ -31,8 +34,9 @@ private extension HobbyViewController {
     }
     
     func setupView() {
+        self.view.backgroundColor = HobbyConstants.viewBackgroundColor
         self.setupNavigationItem()
-        self.setupTabBarItem()
+        self.setupFavouriteTeamsButton()
         self.setupShowNextHobbyButton()
         self.setupHobbyViews()
     }
@@ -42,17 +46,31 @@ private extension HobbyViewController {
         self.navigationItem.title = HobbyConstants.navigationItemTitle
     }
     
-    func setupTabBarItem() {
-        let tabBarItem = UITabBarItem()
-        tabBarItem.title = HobbyConstants.tabBarItemTitle
-        tabBarItem.image = HobbyConstants.tabBarItemImage
-        self.tabBarItem = tabBarItem
+    func setupFavouriteTeamsButton() {
+        self.view.addSubview(self.favouriteTeamsButton)
+        self.favouriteTeamsButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(10)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(200)
+        }
+        self.favouriteTeamsButton.setTitle("Любимые команды", for: .normal)
+        self.favouriteTeamsButton.backgroundColor = .brown
+        self.favouriteTeamsButton.layer.cornerRadius = 12
+        self.favouriteTeamsButton.setTitleColor(.white, for: .normal)
+        self.favouriteTeamsButton.addTarget(self,
+                                           action: #selector(self.favouriteTeamsButtonPressed),
+                                           for: .touchUpInside)
+        self.favouriteTeamsButton.layer.shadowOffset = HobbyConstants.nextHobbyButtonShadowOffset
+        self.favouriteTeamsButton.layer.shadowColor = UIColor.brown.cgColor
+        self.favouriteTeamsButton.layer.shadowRadius = HobbyConstants.nextHobbyButtonShadowRadius
+        self.favouriteTeamsButton.layer.shadowOpacity = HobbyConstants.nextHobbyButtonShadowOpacity
     }
     
     func setupShowNextHobbyButton() {
         self.view.addSubview(self.showNextHobbyButton)
         self.showNextHobbyButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(15)
+            make.top.equalTo(self.favouriteTeamsButton.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
             make.height.equalTo(50)
@@ -102,5 +120,9 @@ private extension HobbyViewController {
                 (nextHobbyView.frame.height + betweenViewOffset)
         }
         self.currentShowingHobbyView -= 1
+    }
+    
+    @objc func favouriteTeamsButtonPressed() {
+        router.showTeamsScene(from: self)
     }
 }

@@ -11,6 +11,6 @@ import UIKit
 struct DeveloperConstants {
     static let navigationItemTitle =  "Я - разработчик"
     static let tabBarItemTitle = "iOS"
-    static let tabBarItemImage = UIImage(systemName: "laptopcomputer.and.iphone")
+    static let tabBarItemImageTitle = "laptopcomputer.and.iphone"
     static let viewBackgroundColor = UIColor.white
 }
