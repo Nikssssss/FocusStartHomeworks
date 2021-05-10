@@ -8,7 +8,7 @@
 import UIKit
 
 class MotivatorCollectionViewCell: UICollectionViewCell {
-    static let identifier = "MotivatorCollectionViewCell"
+    static let identifier = MotivatorsConstants.cellIdentifier
     
     let nameLabel = UILabel()
     let motivatorImageView = UIImageView()
@@ -19,14 +19,14 @@ class MotivatorCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
 }
 
 private extension MotivatorCollectionViewCell {
     func setupView() {
-        self.contentView.backgroundColor = .black
-        self.contentView.layer.cornerRadius = 15
+        self.contentView.backgroundColor = MotivatorsConstants.contentViewBackgroundColor
+        self.contentView.layer.cornerRadius = MotivatorsConstants.contentViewCornerRadius
         self.contentView.clipsToBounds = true
         self.setupMotivatorImageView()
         self.setupNameLabel()
@@ -48,10 +48,10 @@ private extension MotivatorCollectionViewCell {
             make.top.equalTo(self.motivatorImageView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
-        self.nameLabel.font = .systemFont(ofSize: 15, weight: .medium)
-        self.nameLabel.textColor = .white
+        self.nameLabel.font = MotivatorsConstants.nameLabelFont
+        self.nameLabel.textColor = MotivatorsConstants.nameLabelTextColor
         self.nameLabel.textAlignment = .center
         self.nameLabel.adjustsFontSizeToFitWidth = true
-        self.nameLabel.minimumScaleFactor = 0.6
+        self.nameLabel.minimumScaleFactor = MotivatorsConstants.nameLabelMinimulScaleFactor
     }
 }

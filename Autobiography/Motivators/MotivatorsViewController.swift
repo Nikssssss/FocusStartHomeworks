@@ -16,14 +16,31 @@ class MotivatorsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialize()
+        self.initializeMotivators()
         self.setupView()
+        Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
     
-    func initialize() {
+    override func viewWillAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: MotivatorsViewController.self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: MotivatorsViewController.self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: MotivatorsViewController.self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: MotivatorsViewController.self)
+    }
+    
+    func initializeMotivators() {
         self.motivators.append(Motivator(name: "Стив Джобс",
                                          imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/274px-Steve_Jobs_Headshot_2010-CROP.jpg"))
-        self.motivators.append(Motivator(name: "Марк Цукерберг", imageUrl: "https://lh3.googleusercontent.com/proxy/ZAvUQuJt82kI5g9AWedyBpyM5_XIkiXvupTS42zXGhWrRLgvIamTrdGcLuTo8B7fOM6DPqk1kPDGglT_cmeYWZ-B-CuOJbYzPX7wpBA"))
+        self.motivators.append(Motivator(name: "Марк Цукерберг", imageUrl: "https://file.liga.net/images/general/2012/09/10/201209101614154080.jpg?v=1521737321"))
         self.motivators.append(Motivator(name: "Джефф Безос",
                                          imageUrl: "https://tech.24tv.ua/resources/photos/news/201808/1018181.jpg?1609253086000"))
         self.motivators.append(Motivator(name: "Павел Дуров",
@@ -34,8 +51,8 @@ class MotivatorsViewController: UIViewController {
 extension MotivatorsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let viewWidth = self.view.frame.width
-        let interItemOffset: Double = 10
-        let collectionViewOffset: Double = 10 * 2
+        let interItemOffset = MotivatorsConstants.collectionViewInterItemOffset
+        let collectionViewOffset = MotivatorsConstants.collectionViewLeftOffset + MotivatorsConstants.collectionViewRightOffset
         let cellWidth = (Double(viewWidth) - interItemOffset - collectionViewOffset) / 2
         return CGSize(width: cellWidth, height: cellWidth)
     }
@@ -68,7 +85,7 @@ extension MotivatorsViewController: UICollectionViewDataSource {
 
 extension MotivatorsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return CGFloat(MotivatorsConstants.collectionViewInterItemOffset)
     }
 }
 
@@ -81,9 +98,9 @@ private extension MotivatorsViewController {
     
     func setupNavigationItem() {
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationItem.title = "Мотиваторы"
+        self.navigationItem.title = MotivatorsConstants.navigationItemTitle
         let backBarButtonItem = UIBarButtonItem()
-        backBarButtonItem.title = "Назад"
+        backBarButtonItem.title = MotivatorsConstants.backBarButtonItemTitle
         backBarButtonItem.target = self
         backBarButtonItem.action = #selector(self.backBarButtonPressed)
         self.navigationItem.leftBarButtonItem = backBarButtonItem
@@ -104,7 +121,7 @@ private extension MotivatorsViewController {
         self.motivatorsCollectionView.dataSource = self
         self.motivatorsCollectionView.register(MotivatorCollectionViewCell.self,
                                                forCellWithReuseIdentifier: MotivatorCollectionViewCell.identifier)
-        self.motivatorsCollectionView.backgroundColor = .white
+        self.motivatorsCollectionView.backgroundColor = MotivatorsConstants.collectionViewBackgroundColor
     }
     
     @objc func backBarButtonPressed() {

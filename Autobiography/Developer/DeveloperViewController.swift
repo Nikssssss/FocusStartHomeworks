@@ -13,6 +13,23 @@ class DeveloperViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        Logger.logCallingMethod(of: DeveloperViewController.self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: DeveloperViewController.self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: DeveloperViewController.self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: DeveloperViewController.self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: DeveloperViewController.self)
     }
 }
 
@@ -66,15 +83,15 @@ private extension DeveloperViewController {
             make.width.equalTo(200)
             make.centerX.equalToSuperview()
         }
-        motivatorsButton.setTitle("Мотиваторы", for: .normal)
-        motivatorsButton.backgroundColor = .red
-        motivatorsButton.layer.cornerRadius = 12
-        motivatorsButton.setTitleColor(.white, for: .normal)
+        motivatorsButton.setTitle(DeveloperConstants.motivatorsButtonTitle, for: .normal)
+        motivatorsButton.backgroundColor = DeveloperConstants.motivatorsButtonBackgroundColor
+        motivatorsButton.layer.cornerRadius = DeveloperConstants.motivatorsButtonCornerRadius
+        motivatorsButton.setTitleColor(DeveloperConstants.motivatorsButtonTitleColor, for: .normal)
         motivatorsButton.addTarget(self,
                                    action: #selector(self.motivatorsButtonPressed),
                                    for: .touchUpInside)
         motivatorsButton.layer.shadowOffset = HobbyConstants.nextHobbyButtonShadowOffset
-        motivatorsButton.layer.shadowColor = UIColor.red.cgColor
+        motivatorsButton.layer.shadowColor = DeveloperConstants.motivatorsButtonShadowColor
         motivatorsButton.layer.shadowRadius = HobbyConstants.nextHobbyButtonShadowRadius
         motivatorsButton.layer.shadowOpacity = HobbyConstants.nextHobbyButtonShadowOpacity
     }

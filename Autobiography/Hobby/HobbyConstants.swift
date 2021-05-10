@@ -25,6 +25,10 @@ struct HobbyConstants {
     static let nextHobbyButtonShadowOpacity: Float = 0.4
     static let hobbyViewBackgroundColor = UIColor.orange
     static let betweenViewOffset: CGFloat = 10
+    static let favouriteTeamsButtonTitle = "Любимые команды"
+    static let favouriteTeamsButtonBackgroundColor = UIColor.brown
+    static let favouriteTeamsButtonTitleColor = UIColor.white
+    static let favouriteTeamsButtonShadowColor = UIColor.brown.cgColor
     
     //MARK: HobbyCardView
     

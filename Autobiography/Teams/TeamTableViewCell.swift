@@ -8,7 +8,7 @@
 import UIKit
 
 class TeamTableViewCell: UITableViewCell {
-    static let identifier = "TeamTableViewCell"
+    static let identifier = TeamsConstants.cellIdentifier
 
     let teamImageView = UIImageView()
     let teamNameLabel = UILabel()
@@ -20,7 +20,7 @@ class TeamTableViewCell: UITableViewCell {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(TeamsConstants.initError)
     }
 }
 
@@ -50,8 +50,8 @@ private extension TeamTableViewCell {
             make.left.equalTo(self.teamImageView.snp.right).offset(10)
             make.right.equalToSuperview().offset(-10)
         }
-        self.teamNameLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        self.teamNameLabel.textColor = .orange
+        self.teamNameLabel.font = TeamsConstants.teamNamelLabelFont
+        self.teamNameLabel.textColor = TeamsConstants.teamNameLabelTextColor
     }
 
     func setupTeamRosterLabel() {
@@ -62,7 +62,7 @@ private extension TeamTableViewCell {
             make.left.equalTo(self.teamImageView.snp.right).offset(10)
             make.right.equalToSuperview().offset(-10)
         }
-        self.teamRosterLabel.font = .systemFont(ofSize: 13, weight: .light)
-        self.teamRosterLabel.textColor = .gray
+        self.teamRosterLabel.font = TeamsConstants.teamRosterLabelfont
+        self.teamRosterLabel.textColor = TeamsConstants.teamRosterLabelTextColor
     }
 }

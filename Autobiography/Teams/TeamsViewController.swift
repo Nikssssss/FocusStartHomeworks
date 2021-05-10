@@ -14,11 +14,28 @@ class TeamsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialize()
+        self.initializeTeams()
         self.setupView()
+        Logger.logCallingMethod(of: TeamsViewController.self)
     }
     
-    func initialize() {
+    override func viewWillAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: TeamsViewController.self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Logger.logCallingMethod(of: TeamsViewController.self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: TeamsViewController.self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Logger.logCallingMethod(of: TeamsViewController.self)
+    }
+    
+    func initializeTeams() {
         self.teams.append(Team(name: "NaVi",
                                imageUrl: "https://upload.wikimedia.org/wikipedia/ru/thumb/2/2c/NAVI_logo.png/1200px-NAVI_logo.png",
                                roster: ["s1mple", "electronic", "Boombl4", "Perfecto", "b1t"]))
@@ -39,7 +56,7 @@ class TeamsViewController: UIViewController {
 
 extension TeamsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return TeamsConstants.teamsCellHeight
     }
 }
 
@@ -53,9 +70,9 @@ extension TeamsViewController: UITableViewDataSource {
                                                  for: indexPath) as! TeamTableViewCell
         let currentTeam = teams[indexPath.row]
         cell.teamNameLabel.text = currentTeam.name
-        cell.teamRosterLabel.text = ""
+        cell.teamRosterLabel.text = String()
         for player in currentTeam.roster {
-            cell.teamRosterLabel.text?.append(player + "  ")
+            cell.teamRosterLabel.text?.append(player + TeamsConstants.interPlayersSpace)
         }
         DispatchQueue.global(qos: .utility).async {
             guard let imageUrl = URL(string: currentTeam.imageUrl) else {
@@ -78,7 +95,7 @@ private extension TeamsViewController {
     }
     
     func setupNavigationItem() {
-        self.navigationItem.title = "Любимые команды"
+        self.navigationItem.title = TeamsConstants.navigationItemTitle
         self.navigationController?.navigationBar.isTranslucent = false
     }
     

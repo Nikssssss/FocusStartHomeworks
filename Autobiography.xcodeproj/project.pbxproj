@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9C2DC0FD8E512E69E4A4DE2A /* Pods_Autobiography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA198F93A7B14C4DF4A33E6 /* Pods_Autobiography.framework */; };
+		F61439EC26494F99001063CA /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61439EB26494F99001063CA /* Logger.swift */; };
+		F61439F726499AFE001063CA /* TeamsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61439F626499AFE001063CA /* TeamsConstants.swift */; };
+		F61439FA26499D17001063CA /* MotivatorsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61439F926499D17001063CA /* MotivatorsConstants.swift */; };
 		F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F656D99226457C31003944F6 /* DeveloperConstants.swift */; };
 		F656D99626457E7C003944F6 /* HobbyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F656D99526457E7C003944F6 /* HobbyConstants.swift */; };
 		F65C3A6D2647EE0800A1672E /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */; };
@@ -34,6 +37,9 @@
 		2E562A2B436E270E91140DF4 /* Pods-Autobiography.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Autobiography.debug.xcconfig"; path = "Target Support Files/Pods-Autobiography/Pods-Autobiography.debug.xcconfig"; sourceTree = "<group>"; };
 		698BF16F2CDB7C7DF0127185 /* Pods-Autobiography.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Autobiography.release.xcconfig"; path = "Target Support Files/Pods-Autobiography/Pods-Autobiography.release.xcconfig"; sourceTree = "<group>"; };
 		EFA198F93A7B14C4DF4A33E6 /* Pods_Autobiography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Autobiography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61439EB26494F99001063CA /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F61439F626499AFE001063CA /* TeamsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsConstants.swift; sourceTree = "<group>"; };
+		F61439F926499D17001063CA /* MotivatorsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsConstants.swift; sourceTree = "<group>"; };
 		F656D99226457C31003944F6 /* DeveloperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperConstants.swift; sourceTree = "<group>"; };
 		F656D99526457E7C003944F6 /* HobbyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyConstants.swift; sourceTree = "<group>"; };
 		F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,12 +93,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F61439FC26499FC7001063CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F6C7BFF02647D40B002A42D4 /* Router.swift */,
+				F6C7BFF72647DB88002A42D4 /* TabConfigurator.swift */,
+				F61439EB26494F99001063CA /* Logger.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		F6B5257726482FCB00DB1047 /* Motivators */ = {
 			isa = PBXGroup;
 			children = (
 				F6B5257826482FFC00DB1047 /* MotivatorsViewController.swift */,
 				F6B5257C264831A600DB1047 /* MotivatorCollectionViewCell.swift */,
 				F6B5257F2648336D00DB1047 /* Motivator.swift */,
+				F61439F926499D17001063CA /* MotivatorsConstants.swift */,
 			);
 			path = Motivators;
 			sourceTree = "<group>";
@@ -118,6 +135,7 @@
 		F6B723EC263DA95D00259916 /* Autobiography */ = {
 			isa = PBXGroup;
 			children = (
+				F61439FC26499FC7001063CA /* Common */,
 				F6E7D112263FE68B00C544BD /* Application */,
 				F6E7D111263FE67500C544BD /* Developer */,
 				F6E7D113263FE69F00C544BD /* Hobby */,
@@ -127,8 +145,6 @@
 				F6B723F6263DA95F00259916 /* Assets.xcassets */,
 				F6B723F8263DA96000259916 /* LaunchScreen.storyboard */,
 				F6B723FB263DA96000259916 /* Info.plist */,
-				F6C7BFF02647D40B002A42D4 /* Router.swift */,
-				F6C7BFF72647DB88002A42D4 /* TabConfigurator.swift */,
 			);
 			path = Autobiography;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 				F6C7BFFA2647ECAB002A42D4 /* TeamsViewController.swift */,
 				F6C7BFFE2647ED24002A42D4 /* Team.swift */,
 				F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */,
+				F61439F626499AFE001063CA /* TeamsConstants.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -289,6 +306,7 @@
 			files = (
 				F6E8A5BA263DB9AB00A243E8 /* DeveloperInfo.swift in Sources */,
 				F6C7BFFB2647ECAB002A42D4 /* TeamsViewController.swift in Sources */,
+				F61439F726499AFE001063CA /* TeamsConstants.swift in Sources */,
 				F6B5257926482FFC00DB1047 /* MotivatorsViewController.swift in Sources */,
 				F6C7BFFF2647ED24002A42D4 /* Team.swift in Sources */,
 				F6B723F2263DA95D00259916 /* DeveloperViewController.swift in Sources */,
@@ -300,8 +318,10 @@
 				F6B723EE263DA95D00259916 /* AppDelegate.swift in Sources */,
 				F6B525802648336D00DB1047 /* Motivator.swift in Sources */,
 				F6B723F0263DA95D00259916 /* SceneDelegate.swift in Sources */,
+				F61439EC26494F99001063CA /* Logger.swift in Sources */,
 				F656D99626457E7C003944F6 /* HobbyConstants.swift in Sources */,
 				F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */,
+				F61439FA26499D17001063CA /* MotivatorsConstants.swift in Sources */,
 				F6C7BFF82647DB88002A42D4 /* TabConfigurator.swift in Sources */,
 				F6E7D115263FE70100C544BD /* HobbyCardView.swift in Sources */,
 			);
@@ -454,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD8574344G;
 				INFOPLIST_FILE = Autobiography/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HD8574344G;
 				INFOPLIST_FILE = Autobiography/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
