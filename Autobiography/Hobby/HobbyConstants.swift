@@ -11,9 +11,10 @@ import UIKit
 struct HobbyConstants {
     //MARK: HobbyViewController
     
+    static let viewBackgroundColor = UIColor.white
     static let navigationItemTitle = "Мои хобби"
     static let tabBarItemTitle = "Хобби"
-    static let tabBarItemImage = UIImage(systemName: "wand.and.stars")
+    static let tabBarItemImageTitle = "wand.and.stars"
     static let nextHobbyButtonTitle = "Cледующее хобби"
     static let nextHobbyButtonCornerRadius: CGFloat = 12
     static let nextHobbyButtonTitleColor = UIColor.white
@@ -24,6 +25,10 @@ struct HobbyConstants {
     static let nextHobbyButtonShadowOpacity: Float = 0.4
     static let hobbyViewBackgroundColor = UIColor.orange
     static let betweenViewOffset: CGFloat = 10
+    static let favouriteTeamsButtonTitle = "Любимые команды"
+    static let favouriteTeamsButtonBackgroundColor = UIColor.brown
+    static let favouriteTeamsButtonTitleColor = UIColor.white
+    static let favouriteTeamsButtonShadowColor = UIColor.brown.cgColor
     
     //MARK: HobbyCardView
     
