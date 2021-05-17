@@ -19,7 +19,6 @@
 		F65C3A6D2647EE0800A1672E /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */; };
 		F695CADF265250D7006F96D9 /* MotivatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695CADE265250D7006F96D9 /* MotivatorsView.swift */; };
 		F695CAE226525732006F96D9 /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695CAE126525732006F96D9 /* HobbyView.swift */; };
-		F695CAE9265259D0006F96D9 /* HobbyViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695CAE8265259D0006F96D9 /* HobbyViewDelegate.swift */; };
 		F6B5257926482FFC00DB1047 /* MotivatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257826482FFC00DB1047 /* MotivatorsViewController.swift */; };
 		F6B5257D264831A600DB1047 /* MotivatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257C264831A600DB1047 /* MotivatorCollectionViewCell.swift */; };
 		F6B525802648336D00DB1047 /* Motivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257F2648336D00DB1047 /* Motivator.swift */; };
@@ -54,7 +53,6 @@
 		F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		F695CADE265250D7006F96D9 /* MotivatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsView.swift; sourceTree = "<group>"; };
 		F695CAE126525732006F96D9 /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
-		F695CAE8265259D0006F96D9 /* HobbyViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewDelegate.swift; sourceTree = "<group>"; };
 		F6B5257826482FFC00DB1047 /* MotivatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsViewController.swift; sourceTree = "<group>"; };
 		F6B5257C264831A600DB1047 /* MotivatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6B5257F2648336D00DB1047 /* Motivator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivator.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				F656D99526457E7C003944F6 /* HobbyConstants.swift */,
 				F63E904C264FB10500441045 /* HobbyPresenter.swift */,
 				F63E904F264FBAD900441045 /* HobbyService.swift */,
-				F695CAE8265259D0006F96D9 /* HobbyViewDelegate.swift */,
 			);
 			path = Hobby;
 			sourceTree = "<group>";
@@ -370,7 +367,6 @@
 				F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */,
 				F61439FA26499D17001063CA /* MotivatorsConstants.swift in Sources */,
 				F6C7BFF82647DB88002A42D4 /* TabConfigurator.swift in Sources */,
-				F695CAE9265259D0006F96D9 /* HobbyViewDelegate.swift in Sources */,
 				F6E7D115263FE70100C544BD /* HobbyCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
