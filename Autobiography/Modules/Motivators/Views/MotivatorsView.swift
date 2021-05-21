@@ -49,6 +49,15 @@ extension MotivatorsView: UICollectionViewDataSource {
     }
 }
 
+extension MotivatorsView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        //Я не понял как это связывать с презентерами
+        return CGFloat(MotivatorsConstants.collectionViewInterItemOffset)
+    }
+}
+
 private extension MotivatorsView {
     func setupView() {
         self.backgroundColor = .white

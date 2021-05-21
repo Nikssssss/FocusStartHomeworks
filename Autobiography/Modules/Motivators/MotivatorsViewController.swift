@@ -9,7 +9,6 @@ import UIKit
 
 class MotivatorsViewController: UIViewController {
     private let router = Router()
-    private let motivatorsService: MotivatorsServiceProtocol = MotivatorsService()
     
     override func loadView() {
         super.loadView()
@@ -23,7 +22,6 @@ class MotivatorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.motivatorsService.initializeMotivators()
         self.setupView()
         
         Logger.logCallingMethod(of: MotivatorsViewController.self)
@@ -43,14 +41,6 @@ class MotivatorsViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         Logger.logCallingMethod(of: MotivatorsViewController.self)
-    }
-}
-
-extension MotivatorsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(MotivatorsConstants.collectionViewInterItemOffset)
     }
 }
 
