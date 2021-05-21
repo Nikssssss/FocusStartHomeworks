@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol MotivatorCollectionViewCellProtocol {
+    var cell: UICollectionViewCell { get }
+    func configureUI(using motivator: MotivatorViewModel)
+}
+
 class MotivatorCollectionViewCell: UICollectionViewCell {
     static let identifier = MotivatorsConstants.cellIdentifier
     
-    let nameLabel = UILabel()
-    let motivatorImageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let motivatorImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +24,25 @@ class MotivatorCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError(MotivatorsConstants.initError)
+    }
+}
+
+extension MotivatorCollectionViewCell: MotivatorCollectionViewCellProtocol {
+    var cell: UICollectionViewCell {
+        return self
+    }
+    
+    func configureUI(using motivator: MotivatorViewModel) {
+        self.nameLabel.text = motivator.name
+        DispatchQueue.global(qos: .utility).async {
+            guard let imageUrl = URL(string: motivator.imageUrl) else { return }
+            if let data = try? Data(contentsOf: imageUrl) {
+                DispatchQueue.main.async {
+                    self.motivatorImageView.image = UIImage(data: data)
+                }
+            }
+        }
     }
 }
 

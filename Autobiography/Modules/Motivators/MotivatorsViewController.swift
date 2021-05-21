@@ -15,9 +15,6 @@ class MotivatorsViewController: UIViewController {
         super.loadView()
         
         let motivatorsView = MotivatorsView()
-        motivatorsView.delegate = self
-        motivatorsView.dataSource = self
-        motivatorsView.configureView()
         self.view = motivatorsView
         
         Logger.logCallingMethod(of: MotivatorsViewController.self)
@@ -46,42 +43,6 @@ class MotivatorsViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         Logger.logCallingMethod(of: MotivatorsViewController.self)
-    }
-}
-
-extension MotivatorsViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let viewWidth = self.view.frame.width
-        let interItemOffset = MotivatorsConstants.collectionViewInterItemOffset
-        let collectionViewOffset = MotivatorsConstants.collectionViewLeftOffset + MotivatorsConstants.collectionViewRightOffset
-        let cellWidth = (Double(viewWidth) - interItemOffset - collectionViewOffset) / 2
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
-}
-
-extension MotivatorsViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return self.motivatorsService.numberOfMotivators
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MotivatorCollectionViewCell.identifier,
-                                                      for: indexPath) as! MotivatorCollectionViewCell
-        let motivator = self.motivatorsService.getMotivator(at: indexPath.row)
-        guard let currentMotivator = motivator else { return cell }
-        
-        cell.nameLabel.text = currentMotivator.name
-        DispatchQueue.global(qos: .utility).async {
-            guard let imageUrl = URL(string: currentMotivator.imageUrl) else { return }
-            if let data = try? Data(contentsOf: imageUrl) {
-                DispatchQueue.main.async {
-                    cell.motivatorImageView.image = UIImage(data: data)
-                }
-            }
-        }
-        
-        return cell
     }
 }
 

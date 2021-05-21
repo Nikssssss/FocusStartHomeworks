@@ -19,6 +19,10 @@
 		F65C3A6D2647EE0800A1672E /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */; };
 		F695CADF265250D7006F96D9 /* MotivatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695CADE265250D7006F96D9 /* MotivatorsView.swift */; };
 		F695CAE226525732006F96D9 /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695CAE126525732006F96D9 /* HobbyView.swift */; };
+		F6AD935E265817D3000CA840 /* MotivatorsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD935D265817D3000CA840 /* MotivatorsAssembly.swift */; };
+		F6AD936126581822000CA840 /* MotivatorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD936026581822000CA840 /* MotivatorsPresenter.swift */; };
+		F6AD9364265842F6000CA840 /* MotivatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD9363265842F6000CA840 /* MotivatorViewModel.swift */; };
+		F6AD936726584FA2000CA840 /* PresentersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD936626584FA2000CA840 /* PresentersFactory.swift */; };
 		F6B5257926482FFC00DB1047 /* MotivatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257826482FFC00DB1047 /* MotivatorsViewController.swift */; };
 		F6B5257D264831A600DB1047 /* MotivatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257C264831A600DB1047 /* MotivatorCollectionViewCell.swift */; };
 		F6B525802648336D00DB1047 /* Motivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B5257F2648336D00DB1047 /* Motivator.swift */; };
@@ -53,6 +57,10 @@
 		F65C3A6C2647EE0800A1672E /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		F695CADE265250D7006F96D9 /* MotivatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsView.swift; sourceTree = "<group>"; };
 		F695CAE126525732006F96D9 /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
+		F6AD935D265817D3000CA840 /* MotivatorsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsAssembly.swift; sourceTree = "<group>"; };
+		F6AD936026581822000CA840 /* MotivatorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsPresenter.swift; sourceTree = "<group>"; };
+		F6AD9363265842F6000CA840 /* MotivatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorViewModel.swift; sourceTree = "<group>"; };
+		F6AD936626584FA2000CA840 /* PresentersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentersFactory.swift; sourceTree = "<group>"; };
 		F6B5257826482FFC00DB1047 /* MotivatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorsViewController.swift; sourceTree = "<group>"; };
 		F6B5257C264831A600DB1047 /* MotivatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6B5257F2648336D00DB1047 /* Motivator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivator.swift; sourceTree = "<group>"; };
@@ -150,6 +158,10 @@
 				F6B5257F2648336D00DB1047 /* Motivator.swift */,
 				F61439F926499D17001063CA /* MotivatorsConstants.swift */,
 				F63E9042264FABD500441045 /* MotivatorsService.swift */,
+				F6AD935D265817D3000CA840 /* MotivatorsAssembly.swift */,
+				F6AD936026581822000CA840 /* MotivatorsPresenter.swift */,
+				F6AD9363265842F6000CA840 /* MotivatorViewModel.swift */,
+				F6AD936626584FA2000CA840 /* PresentersFactory.swift */,
 			);
 			path = Motivators;
 			sourceTree = "<group>";
@@ -347,6 +359,7 @@
 				F6C7BFFB2647ECAB002A42D4 /* TeamsViewController.swift in Sources */,
 				F61439F726499AFE001063CA /* TeamsConstants.swift in Sources */,
 				F63E904D264FB10500441045 /* HobbyPresenter.swift in Sources */,
+				F6AD9364265842F6000CA840 /* MotivatorViewModel.swift in Sources */,
 				F6B5257926482FFC00DB1047 /* MotivatorsViewController.swift in Sources */,
 				F695CAE226525732006F96D9 /* HobbyView.swift in Sources */,
 				F6C7BFFF2647ED24002A42D4 /* Team.swift in Sources */,
@@ -359,12 +372,15 @@
 				F6B5257D264831A600DB1047 /* MotivatorCollectionViewCell.swift in Sources */,
 				F6E7D10F263FE3F900C544BD /* HobbyViewController.swift in Sources */,
 				F6B723EE263DA95D00259916 /* AppDelegate.swift in Sources */,
+				F6AD936726584FA2000CA840 /* PresentersFactory.swift in Sources */,
 				F6B525802648336D00DB1047 /* Motivator.swift in Sources */,
 				F6B723F0263DA95D00259916 /* SceneDelegate.swift in Sources */,
 				F61439EC26494F99001063CA /* Logger.swift in Sources */,
+				F6AD935E265817D3000CA840 /* MotivatorsAssembly.swift in Sources */,
 				F656D99626457E7C003944F6 /* HobbyConstants.swift in Sources */,
 				F63E9050264FBAD900441045 /* HobbyService.swift in Sources */,
 				F656D99326457C31003944F6 /* DeveloperConstants.swift in Sources */,
+				F6AD936126581822000CA840 /* MotivatorsPresenter.swift in Sources */,
 				F61439FA26499D17001063CA /* MotivatorsConstants.swift in Sources */,
 				F6C7BFF82647DB88002A42D4 /* TabConfigurator.swift in Sources */,
 				F6E7D115263FE70100C544BD /* HobbyCardView.swift in Sources */,

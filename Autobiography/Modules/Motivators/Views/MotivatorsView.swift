@@ -10,11 +10,42 @@ import UIKit
 class MotivatorsView: UIView {
     private var motivatorsCollectionView: UICollectionView!
     
-    weak var delegate: UICollectionViewDelegate?
-    weak var dataSource: UICollectionViewDataSource?
-    
-    func configureView() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension MotivatorsView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Я не понял как это связывать с презентерами
+        let viewWidth = self.frame.width
+        let interItemOffset = MotivatorsConstants.collectionViewInterItemOffset
+        let collectionViewOffset = MotivatorsConstants.collectionViewLeftOffset + MotivatorsConstants.collectionViewRightOffset
+        let cellWidth = (Double(viewWidth) - interItemOffset - collectionViewOffset) / 2
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
+}
+
+extension MotivatorsView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return MotivatorsCellPresenter().numberOfItems //Я не понял как это связывать с несколькими презентерами
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MotivatorCollectionViewCell.identifier,
+                                                      for: indexPath) as! MotivatorCollectionViewCellProtocol
+        let presenterFactory = PresenterFactoryCreator.getPresentersFactory(for: indexPath.row)
+        let presenter = presenterFactory.createCellPresenter()
+        presenter.cellDidLoad(cell: cell, row: indexPath.row)
+        return cell.cell
     }
 }
 
@@ -35,8 +66,8 @@ private extension MotivatorsView {
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
-        self.motivatorsCollectionView.delegate = self.delegate
-        self.motivatorsCollectionView.dataSource = self.dataSource
+        self.motivatorsCollectionView.delegate = self
+        self.motivatorsCollectionView.dataSource = self
         self.motivatorsCollectionView.register(MotivatorCollectionViewCell.self,
                                                forCellWithReuseIdentifier: MotivatorCollectionViewCell.identifier)
         self.motivatorsCollectionView.backgroundColor = MotivatorsConstants.collectionViewBackgroundColor
