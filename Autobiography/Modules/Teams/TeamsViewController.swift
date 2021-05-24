@@ -20,18 +20,26 @@ class TeamsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         Logger.logCallingMethod(of: TeamsViewController.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         Logger.logCallingMethod(of: TeamsViewController.self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
         Logger.logCallingMethod(of: TeamsViewController.self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
         Logger.logCallingMethod(of: TeamsViewController.self)
     }
     

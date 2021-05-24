@@ -11,18 +11,22 @@ protocol HobbyPresenterProtocol: class {
     func viewDidLoad()
     func showNextHobbyButtonPressed()
     func favouriteTeamsButtonPressed()
-    func getAllHobbies() -> [Hobby]
+    func getAllHobbies() -> [HobbyViewInfo]
     func showAlertPressed(title: String, message: String)
     func descriptionButtonPressed(in hobbyCardView: HobbyCardViewProtocol)
 }
 
 class HobbyPresenter {
     weak var hobbyViewController: HobbyViewControllerProtocol?
-    private let hobbyService: HobbyServiceProtocol = HobbyService()
-    private let router: Router = Router()
+    private let hobbyService: HobbyServiceProtocol
+    private let navigator: Navigator
     
-    init(hobbyViewController: HobbyViewControllerProtocol) {
+    init(hobbyViewController: HobbyViewControllerProtocol,
+         hobbyService: HobbyServiceProtocol,
+         navigator: Navigator) {
         self.hobbyViewController = hobbyViewController
+        self.hobbyService = hobbyService
+        self.navigator = navigator
     }
 }
 
@@ -37,12 +41,15 @@ extension HobbyPresenter: HobbyPresenterProtocol {
     }
 
     func favouriteTeamsButtonPressed() {
-        guard let hobbyViewController = self.hobbyViewController?.viewController else { return }
-        self.router.showTeamsScene(from: hobbyViewController)
+        self.navigator.showTeamsScene()
     }
     
-    func getAllHobbies() -> [Hobby] {
-        return self.hobbyService.allHobbies
+    func getAllHobbies() -> [HobbyViewInfo] {
+        let hobbies = self.hobbyService.allHobbies
+        let hobbyViewInfos = hobbies.map { (hobby: Hobby) -> HobbyViewInfo in
+            return HobbyMapper.mapToHobbyViewInfo(hobby)
+        }
+        return hobbyViewInfos
     }
     
     func showAlertPressed(title: String, message: String) {

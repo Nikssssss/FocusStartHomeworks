@@ -9,7 +9,7 @@ import UIKit
 
 protocol HobbyViewProtocol: class {
     var view: UIView { get }
-    var getAllHobbies: (() -> [Hobby]?)? { get set }
+    var getAllHobbies: (() -> [HobbyViewInfo]?)? { get set }
     var nextHobbyButtonTapHandler: (() -> Void)? { get set }
     var favouriteTeamsButtonHandler: (() -> Void)? { get set }
     var showAlertHandler: ((String, String) -> Void)? { get set }
@@ -26,7 +26,7 @@ class HobbyView: UIView {
     private var hobbyViews = [HobbyCardViewProtocol]()
     private var currentShowingHobbyView = 0
     
-    var getAllHobbies: (() -> [Hobby]?)?
+    var getAllHobbies: (() -> [HobbyViewInfo]?)?
     var nextHobbyButtonTapHandler: (() -> Void)?
     var favouriteTeamsButtonHandler: (() -> Void)?
     var showAlertHandler: ((String, String) -> Void)?

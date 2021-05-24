@@ -17,17 +17,10 @@ protocol HobbyViewControllerProtocol: class {
 
 class HobbyViewController: UIViewController {
     private var hobbyView: HobbyViewProtocol?
-    
     private var presenter: HobbyPresenterProtocol?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        self.presenter = HobbyPresenter(hobbyViewController: self)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(HobbyConstants.initError)
+    func setPresenter(_ presenter: HobbyPresenterProtocol) {
+        self.presenter = presenter
     }
     
     override func loadView() {
@@ -63,18 +56,26 @@ class HobbyViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         Logger.logCallingMethod(of: HobbyViewController.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         Logger.logCallingMethod(of: HobbyViewController.self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
         Logger.logCallingMethod(of: HobbyViewController.self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
         Logger.logCallingMethod(of: HobbyViewController.self)
     }
 }

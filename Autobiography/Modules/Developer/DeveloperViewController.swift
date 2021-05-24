@@ -8,7 +8,11 @@
 import UIKit
 
 class DeveloperViewController: UIViewController {
-    private let router = Router()
+    private var navigator: Navigator?
+    
+    func setNavigator(_ navigator: Navigator) {
+        self.navigator = navigator
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,18 +21,26 @@ class DeveloperViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         Logger.logCallingMethod(of: DeveloperViewController.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         Logger.logCallingMethod(of: DeveloperViewController.self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
         Logger.logCallingMethod(of: DeveloperViewController.self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
         Logger.logCallingMethod(of: DeveloperViewController.self)
     }
 }
@@ -97,7 +109,7 @@ private extension DeveloperViewController {
     }
     
     @objc func motivatorsButtonPressed() {
-        self.router.showMotivatorsScene(from: self)
+        self.navigator?.showMotivatorsScene()
     }
 }
 

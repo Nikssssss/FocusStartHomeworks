@@ -8,8 +8,16 @@
 import UIKit
 
 class MotivatorsViewController: UIViewController {
-    private let router = Router()
-    private let motivatorsService: MotivatorsServiceProtocol = MotivatorsService()
+    private var navigator: Navigator?
+    private var motivatorsService: MotivatorsServiceProtocol?
+    
+    func setMotivatorsService(_ motivatorsService: MotivatorsServiceProtocol) {
+        self.motivatorsService = motivatorsService
+    }
+    
+    func setNavigator(navigator: Navigator) {
+        self.navigator = navigator
+    }
     
     override func loadView() {
         super.loadView()
@@ -26,25 +34,32 @@ class MotivatorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.motivatorsService.initializeMotivators()
+        self.motivatorsService?.initializeMotivators()
         self.setupView()
         
         Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
         Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
         Logger.logCallingMethod(of: MotivatorsViewController.self)
     }
 }
@@ -62,18 +77,19 @@ extension MotivatorsViewController: UICollectionViewDelegate {
 extension MotivatorsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return self.motivatorsService.numberOfMotivators
+        return self.motivatorsService?.numberOfMotivators ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MotivatorCollectionViewCell.identifier,
                                                       for: indexPath) as! MotivatorCollectionViewCell
-        let motivator = self.motivatorsService.getMotivator(at: indexPath.row)
-        guard let currentMotivator = motivator else { return cell }
-        
-        cell.nameLabel.text = currentMotivator.name
+        guard let motivator = self.motivatorsService?.getMotivator(at: indexPath.row) else {
+            return UICollectionViewCell()
+        }
+        let motivatorViewInfo = MotivatorsMapper.mapToViewInfo(motivator)
+        cell.nameLabel.text = motivatorViewInfo.name
         DispatchQueue.global(qos: .utility).async {
-            guard let imageUrl = URL(string: currentMotivator.imageUrl) else { return }
+            guard let imageUrl = URL(string: motivatorViewInfo.imageUrl) else { return }
             if let data = try? Data(contentsOf: imageUrl) {
                 DispatchQueue.main.async {
                     cell.motivatorImageView.image = UIImage(data: data)
@@ -109,6 +125,7 @@ private extension MotivatorsViewController {
     }
     
     @objc func backBarButtonPressed() {
-        self.router.dismissViewController(self)
+        let navigationItem = ModuleNavigationItem(viewController: self, moduleTag: .developer)
+        self.navigator?.hideScene(navigationItem)
     }
 }
