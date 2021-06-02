@@ -8,13 +8,24 @@
 import UIKit
 import SnapKit
 
+protocol HobbyCardViewProtocol: class {
+    var showAlertHandler: ((String, String) -> Void)? { get set }
+    var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)? { get set }
+    
+    func setHobbyTitle(to title: String)
+    func setHobbyDescription(to description: String)
+    func showDescription()
+    func setBackgroundColor(to color: UIColor)
+}
+
 class HobbyCardView: UIView {
+    var showAlertHandler: ((String, String) -> Void)?
+    var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)?
+    
     private let hobbyTitleLabel = UILabel()
     private let hobbyDescriptionLabel = UILabel()
     private let showDescriptionButton = UIButton()
     private let descriptionSwitch = UISwitch()
-    
-    weak var delegate: HobbyViewController!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,13 +35,36 @@ class HobbyCardView: UIView {
     required init?(coder: NSCoder) {
         fatalError(HobbyConstants.initError)
     }
-    
+}
+
+extension HobbyCardView: HobbyCardViewProtocol {
     func setHobbyTitle(to title: String) {
         self.hobbyTitleLabel.text = title
     }
     
     func setHobbyDescription(to description: String) {
         self.hobbyDescriptionLabel.text = description
+    }
+    
+    func showDescription() {
+        if self.descriptionSwitch.isOn {
+            guard let description = self.hobbyDescriptionLabel.text else {
+                return
+            }
+            self.showDescriptionLikeAnAlert(description: description)
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                if self.hobbyDescriptionLabel.alpha == 0 {
+                    self.hobbyDescriptionLabel.alpha = 1
+                } else {
+                    self.hobbyDescriptionLabel.alpha = 0
+                }
+            }
+        }
+    }
+    
+    func setBackgroundColor(to color: UIColor) {
+        self.backgroundColor = color
     }
 }
 
@@ -111,27 +145,10 @@ private extension HobbyCardView {
     }
     
     @objc func showDescriptionButtonPressed() {
-        if self.descriptionSwitch.isOn {
-            guard let description = self.hobbyDescriptionLabel.text else {
-                return
-            }
-            self.showDescriptionLikeAnAlert(description: description)
-        } else {
-            UIView.animate(withDuration: 0.5) {
-                if self.hobbyDescriptionLabel.alpha == 0 {
-                    self.hobbyDescriptionLabel.alpha = 1
-                } else {
-                    self.hobbyDescriptionLabel.alpha = 0
-                }
-            }
-        }
+        self.descriptionButtonTapHandler?(self)
     }
     
     func showDescriptionLikeAnAlert(description: String) {
-        let alert = UIAlertController(title: HobbyConstants.descriptionAlertControllerTitle,
-                                      message: description,
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: HobbyConstants.descriptionAlertControllerActionTitle, style: .default))
-        self.delegate.present(alert, animated: true, completion: nil)
+        self.showAlertHandler?(HobbyConstants.descriptionAlertControllerTitle, description)
     }
 }
