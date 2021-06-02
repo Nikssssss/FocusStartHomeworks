@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol MotivatorsCellProtocol {
+    func setNameLabelText(_ text: String)
+    func setMotivatorImage(_ image: UIImage)
+}
+
 class MotivatorCollectionViewCell: UICollectionViewCell {
     static let identifier = MotivatorsConstants.cellIdentifier
     
-    let nameLabel = UILabel()
-    let motivatorImageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let motivatorImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +24,17 @@ class MotivatorCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError(MotivatorsConstants.initError)
+    }
+}
+
+extension MotivatorCollectionViewCell: MotivatorsCellProtocol {
+    func setNameLabelText(_ text: String) {
+        self.nameLabel.text = text
+    }
+    
+    func setMotivatorImage(_ image: UIImage) {
+        self.motivatorImageView.image = image
     }
 }
 

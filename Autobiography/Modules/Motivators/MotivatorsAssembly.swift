@@ -9,11 +9,21 @@ import Foundation
 
 class MotivatorsAssembly {
     static func assemble() -> ModuleNavigationItemProtocol {
-        let viewController = MotivatorsViewController()
+        let motivatorsUI = MotivatorsUI()
+        
         let motivatorsService = MotivatorsService()
-        viewController.setMotivatorsService(motivatorsService)
-        viewController.setNavigator(navigator: Navigator.shared)
-        let navigationItem = ModuleNavigationItem(viewController: viewController, moduleTag: .developer)
+        let navigator = Navigator.shared
+        
+        let motivatorsCellPresenter = MotivatorsCellPresenter(motivatorsService: motivatorsService)
+        let presenter = MotivatorsPresenter(motivatorsUI: motivatorsUI,
+                                            motivatorsService: motivatorsService,
+                                            navigator: navigator,
+                                            motivatorsCellPresenter: motivatorsCellPresenter)
+        
+        motivatorsUI.setPresenter(presenter)
+        presenter.configureUI()
+        
+        let navigationItem = ModuleNavigationItem(viewController: motivatorsUI, moduleTag: .developer)
         return navigationItem
     }
 }
