@@ -9,10 +9,9 @@ import UIKit
 import SnapKit
 
 protocol HobbyCardViewProtocol: class {
-    var view: UIView { get }
-    
     var showAlertHandler: ((String, String) -> Void)? { get set }
     var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)? { get set }
+    
     func setHobbyTitle(to title: String)
     func setHobbyDescription(to description: String)
     func showDescription()
@@ -20,13 +19,13 @@ protocol HobbyCardViewProtocol: class {
 }
 
 class HobbyCardView: UIView {
+    var showAlertHandler: ((String, String) -> Void)?
+    var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)?
+    
     private let hobbyTitleLabel = UILabel()
     private let hobbyDescriptionLabel = UILabel()
     private let showDescriptionButton = UIButton()
     private let descriptionSwitch = UISwitch()
-    
-    var showAlertHandler: ((String, String) -> Void)?
-    var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,10 +38,6 @@ class HobbyCardView: UIView {
 }
 
 extension HobbyCardView: HobbyCardViewProtocol {
-    var view: UIView {
-        return self
-    }
-    
     func setHobbyTitle(to title: String) {
         self.hobbyTitleLabel.text = title
     }
@@ -69,7 +64,7 @@ extension HobbyCardView: HobbyCardViewProtocol {
     }
     
     func setBackgroundColor(to color: UIColor) {
-        self.view.backgroundColor = color
+        self.backgroundColor = color
     }
 }
 

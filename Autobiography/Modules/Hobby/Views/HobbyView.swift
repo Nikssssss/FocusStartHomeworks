@@ -7,36 +7,18 @@
 
 import UIKit
 
-protocol HobbyViewProtocol: class {
-    var view: UIView { get }
-    var getAllHobbies: (() -> [HobbyViewInfo]?)? { get set }
-    var nextHobbyButtonTapHandler: (() -> Void)? { get set }
-    var favouriteTeamsButtonHandler: (() -> Void)? { get set }
-    var showAlertHandler: ((String, String) -> Void)? { get set }
-    var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)? { get set }
-    
-    func configureView()
-    func showNextHobby()
-}
-
 class HobbyView: UIView {
-    private let hobbiesContentView = UIView()
-    private let favouriteTeamsButton = UIButton()
-    private let showNextHobbyButton = UIButton()
-    private var hobbyViews = [HobbyCardViewProtocol]()
-    private var currentShowingHobbyView = 0
-    
     var getAllHobbies: (() -> [HobbyViewInfo]?)?
     var nextHobbyButtonTapHandler: (() -> Void)?
     var favouriteTeamsButtonHandler: (() -> Void)?
     var showAlertHandler: ((String, String) -> Void)?
     var descriptionButtonTapHandler: ((HobbyCardViewProtocol) -> Void)?
-}
-
-extension HobbyView: HobbyViewProtocol {
-    var view: UIView {
-        return self
-    }
+    
+    private let hobbiesContentView = UIView()
+    private let favouriteTeamsButton = UIButton()
+    private let showNextHobbyButton = UIButton()
+    private var hobbyViews = [HobbyCardView]()
+    private var currentShowingHobbyView = 0
     
     func configureView() {
         self.setupView()
@@ -48,7 +30,7 @@ extension HobbyView: HobbyViewProtocol {
         }
         UIView.animate(withDuration: 1) {
             let betweenViewOffset: CGFloat = HobbyConstants.betweenViewOffset
-            let nextHobbyView = self.hobbyViews[self.currentShowingHobbyView - 1].view
+            let nextHobbyView = self.hobbyViews[self.currentShowingHobbyView - 1]
             let numberOfShowingHobbyViews = self.hobbyViews.count - self.currentShowingHobbyView
             nextHobbyView.frame.origin.y += CGFloat(numberOfShowingHobbyViews) *
                 (nextHobbyView.frame.height + betweenViewOffset)
@@ -129,7 +111,7 @@ private extension HobbyView {
         guard let hobbies = getAllHobbies?()?.reversed() else { return }
         var lastView: UIView = self.showNextHobbyButton
         for hobby in hobbies {
-            let hobbyCardView: HobbyCardViewProtocol = HobbyCardView()
+            let hobbyCardView = HobbyCardView()
             hobbyCardView.setHobbyTitle(to: hobby.hobbyTitle)
             hobbyCardView.setHobbyDescription(to: hobby.hobbyDescription)
             hobbyCardView.setBackgroundColor(to: HobbyConstants.hobbyViewBackgroundColor)
@@ -137,7 +119,7 @@ private extension HobbyView {
             hobbyCardView.descriptionButtonTapHandler = self.descriptionButtonTapHandler
             self.hobbyViews.append(hobbyCardView)
             
-            let currentHobbyCardView = hobbyCardView.view
+            let currentHobbyCardView = hobbyCardView
             self.hobbiesContentView.addSubview(currentHobbyCardView)
             currentHobbyCardView.snp.makeConstraints { (make) in
                 make.top.equalTo(lastView.snp.bottom).offset(10)

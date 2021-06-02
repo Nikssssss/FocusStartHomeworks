@@ -8,7 +8,6 @@
 import UIKit
 
 protocol HobbyViewControllerProtocol: class {
-    var viewController: UIViewController { get }
     func configureView()
     func showNextHobby()
     func showAlert(withTitle title: String, andMessage message: String)
@@ -16,7 +15,7 @@ protocol HobbyViewControllerProtocol: class {
 }
 
 class HobbyViewController: UIViewController {
-    private var hobbyView: HobbyViewProtocol?
+    private var hobbyView: HobbyView?
     private var presenter: HobbyPresenterProtocol?
     
     func setPresenter(_ presenter: HobbyPresenterProtocol) {
@@ -26,7 +25,7 @@ class HobbyViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        let hobbyView: HobbyViewProtocol = HobbyView()
+        let hobbyView = HobbyView()
         hobbyView.getAllHobbies = { [weak self] in
             return self?.presenter?.getAllHobbies()
         }
@@ -43,7 +42,7 @@ class HobbyViewController: UIViewController {
             self?.presenter?.descriptionButtonPressed(in: hobbyCardView)
         }
         self.hobbyView = hobbyView
-        self.view = hobbyView.view
+        self.view = hobbyView
         
         Logger.logCallingMethod(of: HobbyViewController.self)
     }
@@ -81,10 +80,6 @@ class HobbyViewController: UIViewController {
 }
 
 extension HobbyViewController: HobbyViewControllerProtocol {
-    var viewController: UIViewController {
-        return self
-    }
-    
     func configureView() {
         self.setupView()
         self.hobbyView?.configureView()

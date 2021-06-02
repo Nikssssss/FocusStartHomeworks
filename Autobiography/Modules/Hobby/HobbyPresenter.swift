@@ -17,7 +17,7 @@ protocol HobbyPresenterProtocol: class {
 }
 
 class HobbyPresenter {
-    weak var hobbyViewController: HobbyViewControllerProtocol?
+    private weak var hobbyViewController: HobbyViewControllerProtocol?
     private let hobbyService: HobbyServiceProtocol
     private let navigator: Navigator
     
