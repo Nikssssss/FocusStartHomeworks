@@ -39,7 +39,8 @@ class Navigator {
         self.moduleNavigator?.present(moduleNavigationItem: motivatorsNavigationItem)
     }
 
-    func hideScene(_ navigationItem: ModuleNavigationItemProtocol) {
+    func hideMotivatorsScene() {
+        let navigationItem = MotivatorsAssembly.assemble()
         self.moduleNavigator?.dismiss(moduleNavigationItem: navigationItem)
     }
     

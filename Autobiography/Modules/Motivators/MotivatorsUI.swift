@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 protocol MotivatorsUIProtocol: class {
-    var viewController: UIViewController { get }
-    
     var backButtonTapHandler: (() -> Void)? { get set }
     var viewDidLoadHandler: (() -> Void)? { get set }
     var loadViewHandler: (() -> Void)? { get set }
@@ -18,6 +16,7 @@ protocol MotivatorsUIProtocol: class {
     var numberOfMotivators: (() -> Int)? { get set }
     var cellWillAppear: ((MotivatorsCellProtocol, IndexPath) -> Void)? { get set }
     var minimumInteritemSpacing: (() -> CGFloat)? { get set }
+    var screenViewWidth: CGFloat { get }
     
     func replaceScreenView()
     func configureUI()
@@ -30,16 +29,7 @@ class MotivatorsUI: UIViewController {
     var viewDidLoadHandler: (() -> Void)?
     var loadViewHandler: (() -> Void)?
     
-    private let motivatorsView: MotivatorsViewProtocol
-    
-    init(motivatorsView: MotivatorsViewProtocol) {
-        self.motivatorsView = motivatorsView
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(MotivatorsConstants.initError)
-    }
+    private let motivatorsView = MotivatorsView()
     
     override func loadView() {
         super.loadView()
@@ -86,11 +76,6 @@ class MotivatorsUI: UIViewController {
 }
 
 extension MotivatorsUI: MotivatorsUIProtocol {
-    var viewController: UIViewController {
-        get {
-            return self
-        }
-    }
     var sizeForItemAt: ((IndexPath) -> CGSize)? {
         set {
             self.motivatorsView.sizeForItemAt = newValue
@@ -123,9 +108,12 @@ extension MotivatorsUI: MotivatorsUIProtocol {
             self.motivatorsView.minimumInteritemSpacing = newValue
         }
     }
+    var screenViewWidth: CGFloat {
+        return self.view.frame.width
+    }
     
     func replaceScreenView() {
-        self.view = self.motivatorsView.view
+        self.view = self.motivatorsView
     }
     
     func configureUI() {

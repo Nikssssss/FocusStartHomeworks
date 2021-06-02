@@ -7,15 +7,6 @@
 
 import UIKit
 
-protocol MotivatorsViewProtocol: class {
-    var view: UIView { get }
-    var sizeForItemAt: ((_ indexPath: IndexPath) -> CGSize)? { get set }
-    var numberOfMotivators: (() -> Int)? { get set }
-    var cellWillAppear: ((MotivatorsCellProtocol, IndexPath) -> Void)? { get set }
-    var minimumInteritemSpacing: (() -> CGFloat)? { get set }
-    func configureView()
-}
-
 class MotivatorsView: UIView {
     var sizeForItemAt: ((_ indexPath: IndexPath) -> CGSize)?
     var numberOfMotivators: (() -> Int)?
@@ -23,12 +14,6 @@ class MotivatorsView: UIView {
     var minimumInteritemSpacing: (() -> CGFloat)?
     
     private var motivatorsCollectionView: UICollectionView?
-}
-
-extension MotivatorsView: MotivatorsViewProtocol {
-    var view: UIView {
-        return self
-    }
     
     func configureView() {
         self.setupView()

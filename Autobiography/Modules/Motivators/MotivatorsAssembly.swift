@@ -9,8 +9,7 @@ import Foundation
 
 class MotivatorsAssembly {
     static func assemble() -> ModuleNavigationItemProtocol {
-        let motivatorsView = MotivatorsView()
-        let motivatorsUI = MotivatorsUI(motivatorsView: motivatorsView)
+        let motivatorsUI = MotivatorsUI()
         
         let motivatorsService = MotivatorsService()
         let navigator = Navigator.shared
@@ -24,7 +23,7 @@ class MotivatorsAssembly {
         motivatorsUI.setPresenter(presenter)
         presenter.configureUI()
         
-        let navigationItem = ModuleNavigationItem(viewController: motivatorsUI.viewController, moduleTag: .developer)
+        let navigationItem = ModuleNavigationItem(viewController: motivatorsUI, moduleTag: .developer)
         return navigationItem
     }
 }

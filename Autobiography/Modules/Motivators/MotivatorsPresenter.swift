@@ -56,18 +56,17 @@ private extension MotivatorsPresenter {
     
     func configureBackButtonTapHandler() {
         self.motivatorsUI?.backButtonTapHandler = { [weak self] in
-            guard let self = self, let viewController = self.motivatorsUI?.viewController else {
+            guard let self = self else {
                 return
             }
-            let navigationItem = ModuleNavigationItem(viewController: viewController, moduleTag: .developer)
-            self.navigator.hideScene(navigationItem)
+            self.navigator.hideMotivatorsScene()
         }
     }
     
     func configureSizeForItemHandler() {
         self.motivatorsUI?.sizeForItemAt = { [weak self] (indexPath) -> CGSize in
             guard let self = self, let motivatorsUI = self.motivatorsUI else { return .zero}
-            let viewWidth = motivatorsUI.viewController.view.frame.width
+            let viewWidth = motivatorsUI.screenViewWidth
             return self.motivatorsCellPresenter.sizeForItem(at: indexPath, viewWidth: viewWidth)
         }
     }
