@@ -9,17 +9,16 @@ import Foundation
 import class UIKit.UIViewController
 
 class ImagesAssembly {
-    static func assemble() -> UIViewController {
-        let imagesView = ImagesView()
-        let imagesUI = ImagesUI(imagesView: imagesView)
+    static func makeModule() -> UIViewController {
+        let imagesUI = ImagesUI()
         
         let imagesStorage = ImagesStorage()
         let networkManager = NetworkManager()
-        let router = ImagesRouter(imagesUI: imagesUI)
+        let navigator = Navigator.shared
         let presenter = ImagesPresenter(imagesUI: imagesUI,
                                         imagesStorage: imagesStorage,
                                         networkManager: networkManager,
-                                        router: router)
+                                        navigator: navigator)
         imagesUI.setPresenter(presenter)
         
         return imagesUI

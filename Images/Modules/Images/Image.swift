@@ -9,5 +9,5 @@ import Foundation
 import class UIKit.UIImage
 
 struct Image {
-    let image: UIImage
+    let imageData: Data
 }

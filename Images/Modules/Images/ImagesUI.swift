@@ -20,11 +20,10 @@ protocol ImagesUIProtocol: class {
 }
 
 class ImagesUI: UIViewController {
-    private let imagesView: ImagesViewProtocol
+    private let imagesView = ImagesView()
     private var presenter: ImagesPresenterProtocol?
     
-    init(imagesView: ImagesViewProtocol) {
-        self.imagesView = imagesView
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -91,7 +90,7 @@ extension ImagesUI: ImagesUIProtocol {
     }
     
     func replaceScreenView() {
-        self.view = imagesView.view
+        self.view = imagesView
     }
     
     func reloadImages() {

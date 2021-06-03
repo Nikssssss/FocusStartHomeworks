@@ -19,8 +19,8 @@
 		F689B2BD2664AD00003B3806 /* ImagesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689B2BC2664AD00003B3806 /* ImagesStorage.swift */; };
 		F689B2C02664AD7F003B3806 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689B2BF2664AD7F003B3806 /* Image.swift */; };
 		F689B2C32664AED2003B3806 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689B2C22664AED2003B3806 /* NetworkManager.swift */; };
-		F689B2C62664B891003B3806 /* ImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689B2C52664B891003B3806 /* ImagesRouter.swift */; };
 		F689B2C92664BFC3003B3806 /* ImagesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689B2C82664BFC3003B3806 /* ImagesAssembly.swift */; };
+		F6F76DE426694EC60010D127 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F76DE326694EC60010D127 /* Navigator.swift */; };
 		F6FBD0BA2664EAD6003C7889 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBD0B92664EAD6003C7889 /* NetworkError.swift */; };
 		F6FBD0C32664F46A003C7889 /* ImagesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBD0C22664F46A003C7889 /* ImagesConstants.swift */; };
 /* End PBXBuildFile section */
@@ -41,8 +41,8 @@
 		F689B2BC2664AD00003B3806 /* ImagesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesStorage.swift; sourceTree = "<group>"; };
 		F689B2BF2664AD7F003B3806 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F689B2C22664AED2003B3806 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		F689B2C52664B891003B3806 /* ImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRouter.swift; sourceTree = "<group>"; };
 		F689B2C82664BFC3003B3806 /* ImagesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssembly.swift; sourceTree = "<group>"; };
+		F6F76DE326694EC60010D127 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		F6FBD0B92664EAD6003C7889 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F6FBD0C22664F46A003C7889 /* ImagesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesConstants.swift; sourceTree = "<group>"; };
 		FF8F3FB35372EAD9C0581457 /* Pods_Images.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Images.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +133,6 @@
 				F689B2B92664A7BE003B3806 /* ImagesPresenter.swift */,
 				F689B2BC2664AD00003B3806 /* ImagesStorage.swift */,
 				F689B2BF2664AD7F003B3806 /* Image.swift */,
-				F689B2C52664B891003B3806 /* ImagesRouter.swift */,
 				F689B2C82664BFC3003B3806 /* ImagesAssembly.swift */,
 				F6FBD0C22664F46A003C7889 /* ImagesConstants.swift */,
 			);
@@ -154,6 +153,7 @@
 			children = (
 				F689B2C22664AED2003B3806 /* NetworkManager.swift */,
 				F6FBD0B92664EAD6003C7889 /* NetworkError.swift */,
+				F6F76DE326694EC60010D127 /* Navigator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				F689B29B26649D2E003B3806 /* ImagesUI.swift in Sources */,
 				F689B2BD2664AD00003B3806 /* ImagesStorage.swift in Sources */,
 				F689B2BA2664A7BE003B3806 /* ImagesPresenter.swift in Sources */,
-				F689B2C62664B891003B3806 /* ImagesRouter.swift in Sources */,
+				F6F76DE426694EC60010D127 /* Navigator.swift in Sources */,
 				F689B2B62664A172003B3806 /* ImageTableViewCell.swift in Sources */,
 				F689B29726649D2E003B3806 /* AppDelegate.swift in Sources */,
 				F6FBD0BA2664EAD6003C7889 /* NetworkError.swift in Sources */,

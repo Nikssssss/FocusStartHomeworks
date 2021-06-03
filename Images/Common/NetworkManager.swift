@@ -19,12 +19,11 @@ class NetworkManager: NetworkManagerProtocol {
             return
         }
         AF.request(imageUrl).responseData { responseData in
-            guard let imageData = responseData.data,
-                  let image = UIImage(data: imageData) else {
+            guard let imageData = responseData.data else {
                 completion(.failure(NetworkError(message: ImagesConstants.noImageDataErrorMessage)))
                 return
             }
-            completion(.success(Image(image: image)))
+            completion(.success(Image(imageData: imageData)))
         }
     }
 }

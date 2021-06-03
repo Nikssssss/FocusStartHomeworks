@@ -8,17 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol ImagesViewProtocol: class {
-    var view: UIView { get }
-    var heightForRowHandler: ((_ indexPath: IndexPath) -> CGFloat)? { get set }
-    var numberOfRowsHandler: (() -> Int)? { get set }
-    var cellWillAppearHandler: ((ImageTableCellProtocol, IndexPath) -> Void)? { get set }
-    var searchButtonTapHanlder: ((String?) -> Void)? { get set }
-    
-    func configureView()
-    func reloadImages()
-}
-
 class ImagesView: UIView {
     var heightForRowHandler: ((_ indexPath: IndexPath) -> CGFloat)?
     var numberOfRowsHandler: (() -> Int)?
@@ -27,12 +16,6 @@ class ImagesView: UIView {
     
     private let imageSearchBar = UISearchBar()
     private let imagesTableView = UITableView()
-}
-
-extension ImagesView: ImagesViewProtocol {
-    var view: UIView {
-        return self
-    }
     
     func configureView() {
         self.setupView()
@@ -56,11 +39,11 @@ extension ImagesView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier,
-                                                       for: indexPath) as? ImageTableCellProtocol else {
+                                                       for: indexPath) as? ImageTableViewCell else {
             return UITableViewCell()
         }
         self.cellWillAppearHandler?(cell, indexPath)
-        return cell.cell
+        return cell
     }
 }
 
@@ -72,7 +55,7 @@ extension ImagesView: UISearchBarDelegate {
 
 private extension ImagesView {
     func setupView() {
-        self.view.backgroundColor = .white
+        self.backgroundColor = .white
         self.setupImageSearchBar()
         self.setupImagesTableView()
     }

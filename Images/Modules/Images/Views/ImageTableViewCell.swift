@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ImageTableCellProtocol: class {
-    var cell: UITableViewCell { get }
     func setImage(_ image: UIImage)
 }
 
@@ -28,10 +27,6 @@ class ImageTableViewCell: UITableViewCell {
 }
 
 extension ImageTableViewCell: ImageTableCellProtocol {
-    var cell: UITableViewCell {
-        return self
-    }
-    
     func setImage(_ image: UIImage) {
         self.customImageView.image = image
     }
