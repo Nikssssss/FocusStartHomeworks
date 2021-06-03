@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ImagesUIProtocol: class {
-    var viewController: UIViewController { get }
     var heightForRowHandler: ((_ indexPath: IndexPath) -> CGFloat)? { get set }
     var numberOfRowsHandler: (() -> Int)? { get set }
     var cellWillAppearHandler: ((ImageTableCellProtocol, IndexPath) -> Void)? { get set }
@@ -49,10 +48,6 @@ class ImagesUI: UIViewController {
 }
 
 extension ImagesUI: ImagesUIProtocol {
-    var viewController: UIViewController {
-        return self
-    }
-    
     var heightForRowHandler: ((IndexPath) -> CGFloat)? {
         get {
             return self.imagesView.heightForRowHandler
